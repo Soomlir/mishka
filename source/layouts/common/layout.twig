@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Mishka</title>
+		<link href="styles/main.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="page container">
+			<header class="page-header">
+				<img class="page-header__logo" src="#" width="86" height="35" alt="Логотип Магазин Мишка">
+				<button class="page-header__menu" type="button">Открыть меню</button>
+			</header>
+
+			{% block main %}{% endblock %}
+
+			<footer class="page-footer">
+				<div class="page-footer__social">
+					<ul class="page-footer__list social-list">
+						<li class="social-list__item">
+							<a class="social-list__link">Vk</a>
+						</li>
+						<li class="social-list__item">
+							<a class="social-list__link">YouTube</a>
+						</li>
+						<li class="social-list__item">
+							<a class="social-list__link">Telegram</a>
+						</li>
+					</ul>
+				</div>
+				<div class="page-footer__copyright">
+					<p class="page-footer__copyright-content">
+						Разработано
+						<img src="#" width="27" height="35" alt="Логотип .html academy">
+					</p>
+				</div>
+			</footer>
+		</div>
+
+		<script src="//cdn.bootcss.com/noUiSlider/8.5.1/nouislider.js"></script>
+		<script src="scripts/main.js"></script>
+		{% if devMode %}
+			<script src="scripts/dev.js"></script>
+		{% endif %}
+
+	</body>
+</html>

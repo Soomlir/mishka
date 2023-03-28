@@ -1,0 +1,41 @@
+{% extends '../common/layout.twig' %}
+
+{% set isCatalog = true %}
+
+{% block main %}
+	<main class="main-catalog">
+		<section class="main-catalog__products products">
+			<h1 class="products__heading">Каталог товаров</h1>
+			<ul class="products__list">
+				<li class="products__item product">
+					<h2 class="product__heading">Зайчик-попрыгайчик</h2>
+					<img class="product__image" src="#" width="260" height="195" alt="Зайчик-попрыгайчик">
+					<p class="product__attributes">Рост 30 см, вес 200 г</p>
+					<p class="product__price">1 200 руб.</p>
+				</li>
+				<li class="products__item product">
+					<h2 class="product__heading">Корзинка для белья</h2>
+					<img class="product__image" src="#" width="260" height="195" alt="Корзинка для белья">
+					<p class="product__attributes">Диаметр 15 см, высота 10 см</p>
+					<p class="product__price">690 руб.</p>
+				</li>
+				<li class="products__item product">
+					<h2 class="product__heading">Большая корзинка для игрушек</h2>
+					<img class="product__image" src="#" width="260" height="195" alt="Большая корзинка для игрушек">
+					<p class="product__attributes">Диаметр 30 см, высота 30 см</p>
+					<p class="product__price">1 500 руб.</p>
+				</li>
+			</ul>
+		</section>
+
+		<article class="main-catalog__production production">
+			<h2 class="production__heading">Процесс производства</h2>
+			<img src="#" alt="Как мы делаем наши товары">
+			<p class="production__text">
+				По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том,
+				как появляются наши товары.
+			</p>
+			<a class="production__add-order">Сделать заказ</a>
+		</article>
+	</main>
+{% endblock %}
