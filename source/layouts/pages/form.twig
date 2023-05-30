@@ -3,9 +3,9 @@
 {% set isMain = false %}
 
 {% block main %}
-	<main class="page-main">
-		<section class="page-main__filters filters">
-			<h1 class="filters__heading">Вязание на заказ</h1>
+	<main>
+		<section class="filters">
+			<h1 class="filters__heading heading">Вязание на заказ</h1>
 			<p class="filters__text">
 				Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа
 				и мы свяжемся с вами, чтобы уточнить детали.
@@ -13,26 +13,42 @@
 			<form class="filters__form" method="post" action="https://echo.htmlacademy.ru">
 				<fieldset class="filters__fieldset">
 					<legend>Тип</legend>
-					<label for="accessories">Аксессуар для интерьера</label>
-					<input id="accessories" type="radio" name="type" checked>
-					<label for="toy">Детская игрушка</label>
-					<input id="toy" type="radio" name="type">
+					<p>
+						<label for="accessories">Аксессуар для интерьера</label>
+						<input id="accessories" type="radio" name="type" value="accessories" checked>
+					</p>
+				  <p>
+						<label for="toy">Детская игрушка</label>
+						<input id="toy" type="radio" name="type" value="child-toy">
+					</p>
 				</fieldset>
 
 				<fieldset class="filters__fieldset">
 					<legend>Цвет</legend>
-					<label for="color1">Белый</label>
-					<input id="color1" type="checkbox" name="color" checked>
-					<label for="color2">Серый</label>
-					<input id="color2" type="checkbox" name="color" checked>
-					<label for="color3">Тиффани</label>
-					<input id="color3" type="checkbox" name="color">
-					<label for="color4">Черный</label>
-					<input id="color4" type="checkbox" name="color">
-					<label for="color5">Розовый</label>
-					<input id="color5" type="checkbox" name="color">
-					<label for="color6">Оранжевый</label>
-					<input id="color6" type="checkbox" name="color">
+					<p>
+						<label for="color1">Белый</label>
+						<input id="color1" type="checkbox" name="color" value="color1" checked>
+					</p>
+					<p>
+						<label for="color2">Серый</label>
+						<input id="color2" type="checkbox" name="color" value="color2" checked>
+					</p>
+					<p>
+						<label for="color3">Тиффани</label>
+						<input id="color3" type="checkbox" name="color" value="color3">
+					</p>
+					<p>
+						<label for="color4">Черный</label>
+						<input id="color4" type="checkbox" name="color" value="color4">
+					</p>
+					<p>
+						<label for="color5">Розовый</label>
+						<input id="color5" type="checkbox" name="color" value="color5">
+					</p>
+					<p>
+						<label for="color6">Оранжевый</label>
+						<input id="color6" type="checkbox" name="color" value="color6">
+					</p>
 				</fieldset>
 
 				<fieldset class="filters__fieldset">
@@ -47,17 +63,17 @@
 
 				<fieldset class="filters__fieldset">
 					<legend>Тел</legend>
-					<input type="tel" name="tel" placeholder="+7 ХХХ ХХХ ХХ ХХ*">
+					<input type="tel" name="tel" aria-label="Введите ваш телефон." placeholder="+7 ХХХ ХХХ ХХ ХХ*">
 				</fieldset>
 
 				<fieldset class="filters__fieldset">
 					<legend>E-mail</legend>
-					<input type="email" name="email" placeholder="Ваш Email*">
+					<input type="email" name="email" aria-label="Введите ваш Email." placeholder="Ваш Email*">
 				</fieldset>
 
 				<fieldset class="filters__fieldset">
 					<legend>Доп</legend>
-					<textarea>
+					<textarea aria-label="Опишите все ваши пожелания к заказу.">
 						Опишите все ваши пожелания к заказу
 					</textarea>
 					<p>*Поля обязательны для заполнения</p>
