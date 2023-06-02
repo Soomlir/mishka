@@ -1,218 +1,235 @@
-import bundleScripts from 'gulp-esbuild';
-import createAutoprefixes from 'autoprefixer';
-import createHtml from 'gulp-twig';
-import { deleteAsync } from 'del';
+import autoprefixer from 'autoprefixer';
+import bemlinter from 'gulp-html-bemlinter';
+import cssnano from 'cssnano';
+import esbuild from 'gulp-esbuild';
 import eslint from 'gulp-eslint';
 import getData from 'gulp-data';
 import gulp from 'gulp';
-import lessSyntax from 'postcss-less';
+import gulpIf from 'gulp-if';
+import htmlnano from 'htmlnano';
+import imagemin from 'gulp-imagemin';
 import lintspaces from 'gulp-lintspaces';
-import minifyCss from 'cssnano';
-import minifySvg from 'gulp-svgmin';
-import preprocessLess from 'gulp-less';
-import processHtml from 'gulp-posthtml';
-import processImages from 'gulp-webp';
-import processPostcss from 'gulp-postcss';
-import processStylelint from 'stylelint';
-import reportStylelint from 'postcss-reporter';
+import mozJpeg from 'imagemin-mozjpeg';
+import pngQuant from 'imagemin-pngquant';
+import postcss from 'gulp-postcss';
+import postcssReporter from 'postcss-reporter';
+import posthtml from 'gulp-posthtml';
+import rename from 'gulp-rename';
+import replace from 'gulp-replace';
+import sass from 'gulp-dart-sass';
+import scssSyntax from 'postcss-scss';
 import server from 'browser-sync';
 import sortMediaQueries from 'postcss-sort-media-queries';
+import stylelint from 'stylelint';
+import svgo from 'imagemin-svgo';
+import svgoConfig from './svgo.config.js';
+import twig from 'gulp-twig';
+import webp from 'gulp-webp';
+import { deleteAsync } from 'del';
+import { htmlValidator } from 'gulp-w3c-html-validator';
 import { stacksvg } from 'gulp-stacksvg';
-import useCondition from 'gulp-if';
-import validateBem from 'gulp-html-bemlinter';
 
-const { dest, parallel, series, src, watch } = gulp;
-const devMode = process.env.NODE_ENV === 'development';
-const lintMode = Boolean(process.env.LINT);
-
-const Path = {
-	DEST: 'build',
-	EDITORCONFIG: ['source/**/*.{js,less,md,twig,svg}', '*.{js,json,md}'],
-	ICONS: 'source/icons/**/*.svg',
-	Images: {
-		DEST: 'build/images',
-		RASTERS: [
-			'source/images/**/*.{jpg,png}',
-			'source/pixelperfect/**/*.{jpg,png}'
-		],
-		VECTORS: 'source/images/**/*.svg'
-	},
-	Layouts: {
-		ALL: 'source/{data,layouts}/**/*.{js,twig}',
-		ENTRIES: 'source/layouts/pages/**/*.twig'
-	},
-	MARKDOWN: ['*.md', 'source/**/*.md'],
-	STATIC: 'source/static/**',
-	Scripts: {
-		ALL: ['source/scripts/**/*.{js,svelte}', '*.js'],
-		DEST: 'build/scripts',
-		ENTRIES: ['source/scripts/*.js']
-	},
-	Styles: {
-		ALL: 'source/styles/**/*.less',
-		DEST: 'build/styles',
-		ENTRIES: 'source/styles/*.less'
-	}
+const { src, dest, series, parallel, watch } = gulp;
+const isDev = process.argv.includes('dev');
+const isTest = process.argv.includes('lint');
+const isBuild = !isDev && !isTest;
+const Files = {
+  BUILD: isBuild ? 'build' : 'dev',
+  EDITORCONFIG: ['*.{js,json,md}', '{source,static}/**/*.{html,js,scss,svg,ts,twig}']
 };
-const postcssPlugins = [sortMediaQueries(), createAutoprefixes()];
-
-// Изменение настроек в production-режиме
-if (!devMode) {
-	Path.Scripts.ENTRIES.push('!source/scripts/dev.js');
-	Path.Images.RASTERS.pop();
-
-	postcssPlugins.push(
-		minifyCss({
-			preset: ['default', { cssDeclarationSorter: false }]
-		})
-	);
-}
-
-// Задача обработки HTML
-const processLayouts = () =>
-	src(Path.Layouts.ENTRIES)
-		.pipe(
-			getData(async ({ path }) => {
-				const page = path
-					.replace(/^.*pages(\\+|\/+)(.*)\.twig$/, '$2')
-					.replace(/\\/g, '/');
-				const versionId = new Date();
-				let commonData = {};
-				let pageData = {};
-
-				try {
-					commonData = await import(`./source/data/_common.js?${versionId}`);
-				} catch (error) {
-					// Continue regardless of error
-				}
-
-				try {
-					pageData = await import(`./source/data/${page}.js?${versionId}`);
-				} catch (error) {
-					// Continue regardless of error
-				}
-
-				return {
-					...commonData.default,
-					...pageData.default,
-					devMode,
-					page,
-					version: devMode ? `?${versionId}` : ''
-				};
-			})
-		)
-		.pipe(createHtml())
-		.pipe(processHtml())
-		.pipe(validateBem())
-		.pipe(useCondition(!lintMode, dest(Path.DEST)));
-
-// Задачи сборки
-
-const buildStyles = () =>
-	src(Path.Styles.ENTRIES)
-		.pipe(preprocessLess())
-		.pipe(processPostcss(postcssPlugins))
-		.pipe(dest(Path.Styles.DEST));
-
-const buildScripts = () =>
-	src(Path.Scripts.ENTRIES)
-		.pipe(
-			bundleScripts({
-				bundle: true,
-				minify: !devMode
-			})
-		)
-		.pipe(dest(Path.Scripts.DEST));
-
-const buildWebp = () =>
-	src(Path.Images.RASTERS)
-		.pipe(processImages( { quality: 75 } ))
-		.pipe(dest(Path.Images.DEST));
-
-const buildSvg = () => src(Path.Images.VECTORS).pipe(dest(Path.Images.DEST));
-
-const buildSprite = () =>
-	src(Path.ICONS)
-		.pipe(useCondition(!devMode, minifySvg()))
-		.pipe(stacksvg({ output: 'icons' }))
-		.pipe(dest(Path.Images.DEST));
-
-const copyStatic = () => src(Path.STATIC).pipe(dest(Path.DEST));
-
-// Задачи линтинга
 
 const lintEditorconfig = () =>
-	src(Path.EDITORCONFIG)
-		.pipe(lintspaces({ editorconfig: '.editorconfig' }))
-		.pipe(lintspaces.reporter({ breakOnWarning: !devMode }));
+  src(Files.EDITORCONFIG)
+    .pipe(lintspaces({ editorconfig: '.editorconfig' }))
+    .pipe(lintspaces.reporter({ breakOnWarning: !isDev }));
 
-const lintStyles = () =>
-	src(Path.Styles.ALL).pipe(
-		processPostcss(
-			[
-				processStylelint(),
-				reportStylelint({
-					clearAllMessages: true,
-					throwError: !devMode
-				})
-			],
-			{ syntax: lessSyntax }
-		)
-	);
+// HTML
+
+const processHtml = () =>
+  src('source/twig/pages/**/*.twig')
+    .pipe(
+      getData(async ({ path }) => {
+        const page = path.replace(/^.*pages(\\+|\/+)(.*)\.twig$/, '$2').replace(/\\/g, '/');
+        return (await import(`./source/data/index.js?${Date.now()}`)).default({ isDev, isTest, page });
+      })
+    )
+    .pipe(twig())
+    .pipe(dest(Files.BUILD));
+
+const postprocessHTML = () =>
+  src('build/**/*.html')
+    .pipe(posthtml([htmlnano({ collapseWhitespace: 'aggressive', minifySvg: false, minifyCss: false })]))
+    .pipe(replace(/\s*<script>.*pixelperfect.*\.js"><\/script>/s, ''))
+    .pipe(
+      replace(/(src|href)="\/(.*?)"/gs, function (_match, attr, path) {
+        const toRoot = this.file.relative
+          .replaceAll('\\', '/')
+          .split('/')
+          .slice(1)
+          .map(() => '../')
+          .join('');
+        return `${attr}="${toRoot}${path}"`;
+      })
+    )
+    .pipe(dest('build'));
+
+const lintHtml = () =>
+  src(`${Files.BUILD}/**/*.html`)
+    .pipe(htmlValidator.analyzer())
+    .pipe(htmlValidator.reporter({ throwErrors: true }))
+    .pipe(bemlinter());
+
+// CSS
+
+const buildStyles = () =>
+  src('source/sass/*.scss', { sourcemaps: isDev })
+    .pipe(
+      sass({
+        functions: {
+          'isDev()'() {
+            return sass.types.Boolean[isDev ? 'TRUE' : 'FALSE'];
+          },
+          'isTest()'() {
+            return sass.types.Boolean[isTest ? 'TRUE' : 'FALSE'];
+          }
+        }
+      }).on('error', function log(error) {
+        sass.logError.bind(this)(error);
+
+        if (isTest) {
+          process.exitCode = 1;
+        } else if (!isDev) {
+          throw new Error('');
+        }
+      })
+    )
+    .pipe(postcss([sortMediaQueries(), autoprefixer()]))
+    .pipe(
+      gulpIf(
+        isBuild,
+        postcss([
+          cssnano({
+            preset: ['default', { cssDeclarationSorter: false }]
+          })
+        ])
+      )
+    )
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(dest(`${Files.BUILD}/css`, { sourcemaps: '.' }));
+
+const lintStyles = () => {
+  return src('source/sass/**/*.scss').pipe(
+    postcss(
+      [
+        stylelint(),
+        postcssReporter({
+          clearAllMessages: true,
+          throwError: !isDev
+        })
+      ],
+      { syntax: scssSyntax }
+    )
+  );
+};
+
+// JS
+
+const buildScripts = () =>
+  src('source/js/*.js')
+    .pipe(
+      esbuild({
+        bundle: true,
+        format: 'iife',
+        minify: isBuild
+      })
+    )
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(dest(`${Files.BUILD}/js`));
 
 const lintScripts = () =>
-	src(Path.Scripts.ALL)
-		.pipe(eslint({ fix: false }))
-		.pipe(eslint.format())
-		.pipe(useCondition(!devMode, eslint.failAfterError()));
+  src('source/{data,js}/**/*.{js,ts}')
+    .pipe(eslint({ fix: false }))
+    .pipe(eslint.format())
+    .pipe(gulpIf(!isDev, eslint.failAfterError()));
 
-// Общепроектные задачи
+// IMG
 
-const cleanDist = async (done) => {
-	await deleteAsync(Path.DEST);
-	done();
+// Если картинка в режиме сборки и не лежит в static, её нужно будет оптимизировать и копировать
+const needCopy = ({ base }) => isBuild && !base.replaceAll('\\', '/').includes('/static/');
+
+const processImages = () =>
+  src(['source/img/**/*.{jpg,png,svg}', 'static/img/**/*.{jpg,png,svg}'])
+    .pipe(
+      gulpIf(
+        needCopy,
+        imagemin([
+          svgo(svgoConfig),
+          pngQuant({
+            speed: 1,
+            strip: true,
+            dithering: 1,
+            quality: [0.8, 0.9],
+            optimizationLevel: 3
+          }),
+          mozJpeg({ quality: 75, progressive: true })
+        ])
+      )
+    )
+    .pipe(gulpIf(needCopy, dest(`${Files.BUILD}/img`)))
+    .pipe(webp({ quality: 75 }))
+    .pipe(dest(`${Files.BUILD}/img`));
+
+const createSprite = () =>
+  src('source/sprite/**/*.svg')
+    .pipe(imagemin([svgo(svgoConfig)]))
+    .pipe(stacksvg({ output: `sprite` }))
+    .pipe(dest(`${Files.BUILD}/img`));
+
+// BUILD
+
+const copyStatic = () => src('static/**/*').pipe(dest('build'));
+
+const cleanBuild = () => deleteAsync('build');
+
+// START
+
+const reload = (done) => {
+  server.reload();
+  done();
 };
 
-const reloadServer = (done) => {
-	server.reload();
-	done();
+const start = () => {
+  server.init({
+    server: ['dev', 'source', 'static'],
+    cors: true,
+    notify: false,
+    ui: false
+  });
+
+  watch('source/twig/**/*.twig', series(processHtml, lintHtml, reload));
+  watch('source/sass/**/*.scss', series(parallel(lintStyles, buildStyles), reload));
+  watch('source/data/**/*.{js,ts}', series(parallel(lintScripts, processHtml), reload));
+  watch('source/js/**/*.{js,ts}', series(parallel(lintScripts, buildScripts), reload));
+  watch('{source,static}/img/**/*.{jpg,png}').on('all', (event, path) => {
+    if (['add', 'change'].includes(event, path)) {
+      const img = path.replace(/\\/g, '/');
+      series(function createWebp() {
+        return src(img)
+          .pipe(webp({ quality: 75 }))
+          .pipe(dest(img.replace(/^(source|static)\/(.*)\/.*/, `${Files.BUILD}/$2`)));
+      }, reload)();
+    }
+  });
+  watch('source/sprite/**/*.svg', series(createSprite, reload));
+  watch('static/**/*').on('change', server.reload);
+  watch(Files.EDITORCONFIG, lintEditorconfig);
 };
 
-const startWatch = () => {
-	server.init({ server: Path.DEST });
+// SERIES
 
-	watch(Path.EDITORCONFIG, lintEditorconfig);
-	watch(Path.ICONS, series(buildSprite, reloadServer));
-	watch(Path.Images.RASTERS, series(buildWebp, reloadServer));
-	watch(Path.Images.VECTORS, series(buildSvg, reloadServer));
-	watch(Path.Layouts.ALL, series(processLayouts, reloadServer));
-	watch(
-		Path.Scripts.ALL,
-		parallel(series(buildScripts, reloadServer), lintScripts)
-	);
-	watch(Path.STATIC, series(copyStatic, reloadServer));
-	watch(
-		Path.Styles.ALL,
-		parallel(series(buildStyles, reloadServer), lintStyles)
-	);
-};
+const compile = parallel(processHtml, buildScripts, buildStyles, createSprite, processImages);
+const lint = parallel(lintEditorconfig, lintHtml, lintScripts, lintStyles);
 
-export const lint = parallel(
-	lintEditorconfig,
-	lintScripts,
-	lintStyles,
-	processLayouts
-);
-export const build = series(
-	cleanDist,
-	lint,
-	parallel(
-		buildScripts,
-		buildSprite,
-		buildStyles,
-		buildSvg,
-		buildWebp,
-		copyStatic
-	)
-);
-export default series(build, startWatch);
+export const build = series(cleanBuild, compile, copyStatic, postprocessHTML);
+export const dev = series(compile, parallel(lint, start));
+export const test = series(processHtml, lint);

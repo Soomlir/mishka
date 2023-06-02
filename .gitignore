@@ -1,4 +1,10 @@
+*.log
+*.sublime*
 .DS_Store
+.idea
+.vscode
 Thumbs.db
-build
-node_modules
+dev/
+build/
+node_modules/
+npm-debug.*
