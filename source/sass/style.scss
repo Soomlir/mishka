@@ -1,5 +1,4 @@
-@import url("fonts.scss");
-@import url("common/mixins");
-@import url("common/fonts");
-@import url("common/global");
-@import url("components/page");
+@import url("base/fonts");
+@import url("base/global");
+@import url("blocks/visually-hidden");
+@import url("blocks/header");

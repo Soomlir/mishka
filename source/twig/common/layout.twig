@@ -4,16 +4,18 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Mishka</title>
-		<link href="styles/main.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/style.min.css">
 	</head>
 
 	<body>
 		<div class="page">
 			<header class="page-header">
 				<a href="index.html">
-					<img class="page-header__logo" src="images/mishka-logo-mobile.svg" width="86" height="35" alt="Логотип Магазин Мишка.">
+					<img class="page-header__logo" src="img/mobile/mishka-logo-mobile.svg" width="86" height="35" alt="Логотип Магазин Мишка.">
 				</a>
-				<button class="page-header__menu" type="button">Открыть меню</button>
+				<button class="page-header__menu" type="button">
+					<span class="visually-hidden">Открыть меню</span>
+				</button>
 			</header>
 
 			{% block main %}{% endblock %}
