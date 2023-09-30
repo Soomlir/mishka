@@ -1,3 +1,13 @@
-body {
-  background-color: #000000;
+.page-header {
+  display: flex;
+  align-items: center;
+}
+
+.page-header__menu {
+  width: 20px;
+  height: 14px;
+  background: transparent;
+  background-image: url("../../img/mobile/menu.svg");
+  border: none;
+  cursor: pointer;
 }

@@ -43,7 +43,9 @@
 			</footer>
 		</div>
 
-		<script src="scripts/main.js"></script>
+		{% include 'base/scripts.twig' %}
+
+		<script src="js/script.js"></script>
 		{% if devMode %}
 			<script src="scripts/dev.js"></script>
 		{% endif %}
