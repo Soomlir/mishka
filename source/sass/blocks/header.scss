@@ -1,13 +1,21 @@
 .page-header {
   display: flex;
   align-items: center;
+  box-shadow: 0 1px 0 0 #ececec, 0 1px 0 0 #ececec inset;
+}
+
+.page-header__logo {
+  margin: 22px auto;
 }
 
 .page-header__menu {
+  position: absolute;
+  top: 32px;
+  right: 31px;
   width: 20px;
   height: 14px;
   background: transparent;
-  background-image: url("../../img/mobile/menu.svg");
+  background-image: url("../img/mobile/icons/menu.svg");
   border: none;
   cursor: pointer;
 }

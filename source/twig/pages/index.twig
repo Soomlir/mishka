@@ -5,12 +5,14 @@
 {% block main %}
 	<main>
 		<section class="promo">
-			<h1 class="promo__heading">Милые штуки ручной работы для дома</h1>
+			<h1 class="promo__heading">Милые штуки<br>
+				ручной<br>
+				работы для дома</h1>
 			<ul class="promo__products-list">
-				<li class="promo__products-item">
+				<li class="promo__products-item promo__products-item--normal bg-element">
 					Предметы интерьера
 				</li>
-				<li class="promo__products-item">
+				<li class="promo__products-item promo__products-item--accent bg-element-another">
 					Детские игрушки
 				</li>
 			</ul>
@@ -18,10 +20,10 @@
 
 		<section class="product">
 			<h2 class="product__heading">Вязаные корзинки</h2>
-			<span class="product__special">Товар недели</span>
+			<p class="product__special">Товар недели</p>
 			<p class="product__text">
 				Экологически чистая пряжа,
-				ручная работа. Доступны в шести расцветках и трёх размерах.
+												ручная работа. Доступны в шести расцветках и трёх размерах.
 			</p>
 			<table class="product__attributes">
 				<tbody>
@@ -39,21 +41,26 @@
 					</tr>
 				</tbody>
 			</table>
-			<img class="product__image" src="img/mobile/triple-set-mobile.jpg" width="260" height="315"
-				alt="Вязанные корзинки ручной работы.">
+			<img class="product__image" src="img/mobile/triple-set-mobile.jpg" width="260" height="315" alt="Вязанные корзинки ручной работы.">
 			<p class="product__price">Цена: 990 руб.</p>
-			<a class="product__order">Заказать</a>
+			<a class="product__order" href="#!">Заказать</a>
 		</section>
 
 		<section class="about-us">
 			<h2 class="about-us__heading">Коротко о нас:</h2>
 			<ul class="about-us__list">
-				<li class="about-us__item">Экологически чистые материалы</li>
-				<li class="about-us__item">Скандинавский стиль по российской цене</li>
-				<li class="about-us__item">Увеличивает лайки на фотографиях</li>
-				<li class="about-us__item">Связано вручную c любовью и умилением</li>
-				<li class="about-us__item">Поддержка отечественного производителя</li>
-				<li class="about-us__item">Поставляется в подарочной упаковке</li>
+				<li class="about-us__item about-us__item--icon about-us__item--icon-1">Экологически<br>
+					чистые материалы</li>
+				<li class="about-us__item about-us__item--icon about-us__item--icon-2">Скандинавский стиль<br>
+					по российской цене</li>
+				<li class="about-us__item about-us__item--icon about-us__item--icon-3">Увеличивает лайки<br>
+					на фотографиях</li>
+				<li class="about-us__item about-us__item--icon about-us__item--icon-4">Связано вручную<br>
+					c любовью и умилением</li>
+				<li class="about-us__item about-us__item--icon about-us__item--icon-5">Поддержка отечественного<br>
+					производителя</li>
+				<li class="about-us__item about-us__item--icon about-us__item--icon-6">Поставляется<br>
+					в подарочной упаковке</li>
 			</ul>
 		</section>
 
@@ -62,8 +69,9 @@
 			<ul class="reviews__list">
 				<li class="reviews__item">
 					<p class="reviews__text">
-						Я молодая мама, но всё равно фотографии не набирали и близко такого количества лайков, как
-						у популярных инстамамочек. В отчаянии, я накупила аксессуаров и игрушек в Мишке,
+						Я молодая мама, но всё равно фотографии не набирали и близко такого количества лайков, как<br>
+						у популярных инстамамочек.<br>
+						В отчаянии, я накупила аксессуаров и игрушек в Мишке,<br>
 						и мои фотографии сразу стали более стильными, а также набирают больше лайков!
 					</p>
 					<p class="reviews__author">
@@ -72,9 +80,12 @@
 					</p>
 				</li>
 			</ul>
-			<button class="reviews__prev" type="button">Предыдущий отзыв</button>
-			<button class="reviews__next" type="button">Следующий отзыв</button>
-			<a class="reviews__new">Написать</a>
+			<button class="reviews__prev" type="button">
+				<span class="visually-hidden">Предыдущий отзыв</span>
+			</button><button class="reviews__next" type="button">
+				<span class="visually-hidden">Следующий отзыв</span>
+			</button>
+			<a class="reviews__new" href="#!">Написать</a>
 		</section>
 
 		<section class="contacts">
