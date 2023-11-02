@@ -12,47 +12,47 @@
 			</p>
 			<form class="filters__form" method="post" action="https://echo.htmlacademy.ru">
 				<fieldset class="filters__fieldset">
-					<legend>Тип</legend>
-					<p>
-						<label for="accessories">Аксессуар для интерьера</label>
-						<input id="accessories" type="radio" name="type" value="accessories" checked>
+					<legend class="filters__legend">Тип</legend>
+					<p class="filters__inner">
+						<input class="filters__radio" id="accessories" type="radio" name="type" value="accessories" checked>
+						<label class="filters__radio-label" for="accessories">Аксессуар для интерьера</label>
 					</p>
-					<p>
-						<label for="toy">Детская игрушка</label>
-						<input id="toy" type="radio" name="type" value="child-toy">
-					</p>
-				</fieldset>
-
-				<fieldset class="filters__fieldset">
-					<legend>Цвет</legend>
-					<p>
-						<label for="color1">Белый</label>
-						<input id="color1" type="checkbox" name="color" value="color1" checked>
-					</p>
-					<p>
-						<label for="color2">Серый</label>
-						<input id="color2" type="checkbox" name="color" value="color2" checked>
-					</p>
-					<p>
-						<label for="color3">Тиффани</label>
-						<input id="color3" type="checkbox" name="color" value="color3">
-					</p>
-					<p>
-						<label for="color4">Черный</label>
-						<input id="color4" type="checkbox" name="color" value="color4">
-					</p>
-					<p>
-						<label for="color5">Розовый</label>
-						<input id="color5" type="checkbox" name="color" value="color5">
-					</p>
-					<p>
-						<label for="color6">Оранжевый</label>
-						<input id="color6" type="checkbox" name="color" value="color6">
+					<p class="filters__inner">
+						<input class="filters__radio" id="toy" type="radio" name="type" value="child-toy">
+						<label class="filters__radio-label filters__radio-label--indent" for="toy">Детская игрушка</label>
 					</p>
 				</fieldset>
 
 				<fieldset class="filters__fieldset">
-					<legend>Фио</legend>
+					<legend class="filters__legend filters__legend--indent">Цвет</legend>
+					<p class="filters__checkbox-inner">
+						<input class="filters__checkbox" id="color1" type="checkbox" name="color" value="color1" checked>
+						<label class="filters__checkbox-label" for="color1">Белый</label>
+					</p>
+					<p class="filters__checkbox-inner">
+						<input class="filters__checkbox" id="color2" type="checkbox" name="color" value="color2" checked>
+						<label class="filters__checkbox-label" for="color2">Серый</label>
+					</p>
+					<p class="filters__checkbox-inner">
+						<input class="filters__checkbox" id="color3" type="checkbox" name="color" value="color3">
+						<label class="filters__checkbox-label" for="color3">Тиффани</label>
+					</p>
+					<p class="filters__checkbox-inner">
+						<input class="filters__checkbox" id="color4" type="checkbox" name="color" value="color4">
+						<label class="filters__checkbox-label" for="color4">Черный</label>
+					</p>
+					<p class="filters__checkbox-inner">
+						<input class="filters__checkbox" id="color5" type="checkbox" name="color" value="color5">
+						<label class="filters__checkbox-label" for="color5">Розовый</label>
+					</p>
+					<p class="filters__checkbox-inner">
+						<input class="filters__checkbox" id="color6" type="checkbox" name="color" value="color6">
+						<label class="filters__checkbox-label" for="color6">Оранжевый</label>
+					</p>
+				</fieldset>
+
+				<fieldset class="filters__fieldset">
+					<legend class="filters__legend">Фио</legend>
 					<label for="name">Имя:</label>
 					<input id="name" type="text" name="name" placeholder="Введите ваше имя*">
 					<label for="last-name">Фамилия:</label>
@@ -62,17 +62,17 @@
 				</fieldset>
 
 				<fieldset class="filters__fieldset">
-					<legend>Тел</legend>
+					<legend class="filters__legend">Тел</legend>
 					<input type="tel" name="tel" aria-label="Введите ваш телефон." placeholder="+7 ХХХ ХХХ ХХ ХХ*">
 				</fieldset>
 
 				<fieldset class="filters__fieldset">
-					<legend>E-mail</legend>
+					<legend class="filters__legend">E-mail</legend>
 					<input type="email" name="email" aria-label="Введите ваш Email." placeholder="Ваш Email*">
 				</fieldset>
 
 				<fieldset class="filters__fieldset">
-					<legend>Доп</legend>
+					<legend class="filters__legend">Доп</legend>
 					<textarea aria-label="Опишите все ваши пожелания к заказу.">
 						Опишите все ваши пожелания к заказу
 					</textarea>

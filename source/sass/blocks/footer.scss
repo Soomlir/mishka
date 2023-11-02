@@ -1,6 +1,6 @@
 .page-footer {
   height: 200px;
-  margin-top: 53px;
+  margin-top: 55px;
   background-color: #f1f1f1;
 }
 
@@ -9,7 +9,7 @@
   justify-content: space-between;
   width: 142px;
   height: 27px;
-  margin: 0;
+  margin: 0 auto;
   padding: 25px 59px 28px;
   list-style: none;
 }
@@ -17,17 +17,16 @@
 .social-list__link {
   position: relative;
   display: flex;
-  width: 50px;
-  height: 40px;
+  width: 28px;
+  height: 22px;
 }
 
 .social-list__link::before {
   content: "";
-  width: 22px;
-  height: 28px;
+  width: 28px;
+  height: 22px;
   margin: auto;
   background-repeat: no-repeat;
-  background-position: 50% 50%;
 }
 
 .social-list__link--vk::before {
@@ -40,4 +39,16 @@
 
 .social-list__link--telegram::before {
   background-image: url("../img/mobile/icons/telegram.svg");
+}
+
+.page-footer__copyright-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 19px 69px 23px;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 18px;
+  color: #000000;
 }
