@@ -1,9 +1,22 @@
 .about-us {
-  margin: 0 30px;
-  margin-top: 73px;
+  position: relative;
+  margin: 0;
   margin-bottom: 58px;
+  padding: 0 30px;
+  padding-top: 38px;
   border-top: 6px;
-  border-image-source: url("../img/mobile/icons/zigzag.svg");
+}
+
+.about-us::before {
+  content: "";
+  position: absolute;
+  top: 1px;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  height: 6px;
+  background-image: url("../img/mobile/icons/zigzag.svg");
+  background-size: 320px 6px;
 }
 
 .about-us__heading {

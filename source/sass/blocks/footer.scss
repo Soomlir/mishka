@@ -1,5 +1,5 @@
 .page-footer {
-  margin-top: 55px;
+  margin-top: 41px;
   background-color: #f1f1f1;
 }
 
@@ -50,4 +50,9 @@
   font-size: 19px;
   line-height: 18px;
   color: #000000;
+}
+
+.page-footer__copyright-logo {
+  position: relative;
+  top: 2px;
 }

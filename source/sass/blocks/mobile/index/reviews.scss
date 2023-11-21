@@ -1,6 +1,6 @@
 .reviews {
-  margin-bottom: 45px;
   padding: 0 30px;
+  padding-bottom: 45px;
 }
 
 .reviews__heading {
@@ -72,16 +72,7 @@
 }
 
 .reviews__new {
-  display: inline-block;
+  width: 260px;
   margin-top: 38px;
-  padding: 14px 79px;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 20px;
-  text-align: center;
-  color: #444444;
-  text-transform: uppercase;
-  text-decoration: none;
-  background: #ffffff;
-  border: 2px solid #444444;
+  padding: 14px 28px;
 }

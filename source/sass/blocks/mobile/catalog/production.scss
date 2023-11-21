@@ -1,5 +1,6 @@
 .production {
   margin: 0 30px;
+  margin-bottom: 19px;
   background: #ffffff;
   border: 1px solid #ececec;
 }
@@ -8,7 +9,7 @@
   position: relative;
   margin: 0;
   padding-top: 21px;
-  padding-bottom: 26px;
+  padding-bottom: 27px;
   padding-left: 90px;
   font-weight: 700;
   font-size: 17px;
@@ -32,6 +33,7 @@
   height: 150px;
   background-image: url("../img/mobile/video-mobile.jpg");
   background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 
 .production__video-control {
@@ -45,11 +47,12 @@
   background-image: url("../img/mobile/icons/play.svg");
   background-repeat: no-repeat;
   border: none;
+  border-radius: 15px;
 }
 
 .production__text {
   margin: 0;
-  padding: 36px 20px 41px 34px;
+  padding: 36px 20px 40px 34px;
   font-weight: 400;
   font-size: 13px;
   line-height: 24px;
@@ -57,17 +60,9 @@
 }
 
 .production__add-order {
-  display: inline-block;
-  box-sizing: border-box;
-  margin: 0 34px 91px;
-  padding: 16px 20px;
-  font-weight: 700;
+  width: 192px;
+  margin: 0 33px 32px;
+  padding: 16px 10px;
   font-size: 18px;
   line-height: 16px;
-  text-align: center;
-  color: #444444;
-  text-transform: uppercase;
-  text-decoration: none;
-  background: #ffffff;
-  border: 2px solid #444444;
 }
