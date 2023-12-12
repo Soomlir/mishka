@@ -10,20 +10,22 @@
 				работы для дома</h1>
 			<ul class="promo__products-list">
 				<li class="promo__products-item promo__products-item--normal bg-element">
-					Предметы интерьера
+					<a class="promo__products-link" href="#!">Предметы интерьера</a>
 				</li>
 				<li class="promo__products-item promo__products-item--accent bg-element-another">
-					Детские игрушки
+					<a class="promo__products-link" href="#!">Детские игрушки</a>
 				</li>
 			</ul>
 		</section>
 
 		<section class="product">
-			<h2 class="product__heading">Вязаные корзинки</h2>
-			<p class="product__special">Товар недели</p>
+			<header class="product__header">
+				<h2 class="product__heading">Вязаные корзинки</h2>
+				<p class="product__special">Товар недели</p>
+			</header>
 			<p class="product__text">
 				Экологически чистая пряжа,
-																								ручная работа. Доступны в шести расцветках и трёх размерах.
+				ручная работа. Доступны в шести расцветках и трёх размерах.
 			</p>
 			<table class="product__attributes">
 				<tbody>
@@ -41,7 +43,10 @@
 					</tr>
 				</tbody>
 			</table>
-			<img class="product__image" src="img/mobile/triple-set-mobile.jpg" width="260" height="315" alt="Вязанные корзинки ручной работы.">
+			<picture>
+				<source media="(min-width: 768px)" srcset="img/tablet/triple-set-tablet.jpg" width="334" height="404">
+				<img class="product__image" src="img/mobile/triple-set-mobile.jpg" width="260" height="315" alt="Вязанные корзинки ручной работы.">
+			</picture>
 			<p class="product__price">Цена: 990 руб.</p>
 			<a class="product__order button" href="#!">Заказать</a>
 		</section>

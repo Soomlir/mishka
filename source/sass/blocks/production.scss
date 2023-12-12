@@ -3,6 +3,16 @@
   margin-bottom: 19px;
   background: #ffffff;
   border: 1px solid #ececec;
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0;
+    padding: 0 50px;
+
+    border: none;
+  }
 }
 
 .production__heading {
@@ -15,6 +25,17 @@
   font-size: 17px;
   line-height: 24px;
   color: #000000;
+
+  @media (min-width: 768px) {
+    order: 1;
+    padding-top: 41px;
+    padding-bottom: 24px;
+    padding-left: 107px;
+    font-size: 20px;
+    line-height: 24px;
+    border: 1px solid #ececec;
+    border-bottom: none;
+  }
 }
 
 .production__heading::before {
@@ -26,6 +47,11 @@
   height: 22px;
   background-image: url("../img/mobile/icons/video.svg");
   background-repeat: no-repeat;
+
+  @media (min-width: 768px) {
+    top: 39px;
+    left: 42px;
+  }
 }
 
 .production__video {
@@ -34,20 +60,29 @@
   background-image: url("../img/mobile/video-mobile.jpg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
+
+  @media (min-width: 768px) {
+    min-height: 456px;
+    background-image: url("../img/tablet/video-tablet.jpg");
+    background-size: cover;
+  }
 }
 
 .production__video-control {
   position: absolute;
-  top: 38px;
-  left: 79px;
+  top: 50%;
+  left: 50%;
   width: 100px;
   height: 77px;
   margin: auto;
   padding: 0;
+  background-color: transparent;
   background-image: url("../img/mobile/icons/play.svg");
   background-repeat: no-repeat;
   border: none;
   border-radius: 15px;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 
 .production__text {
@@ -57,6 +92,15 @@
   font-size: 13px;
   line-height: 24px;
   color: #444444;
+
+  @media (min-width: 768px) {
+    order: 2;
+    padding: 0 46px 40px 39px;
+    font-size: 15px;
+    line-height: 30px;
+    border-right: 1px solid #ececec;
+    border-left: 1px solid #ececec;
+  }
 }
 
 .production__add-order {
@@ -65,4 +109,11 @@
   padding: 16px 10px;
   font-size: 18px;
   line-height: 16px;
+
+  @media (min-width: 768px) {
+    order: 3;
+    width: 584px;
+    margin: 0 42px 32px;
+    font-size: 17px;
+  }
 }

@@ -11,11 +11,40 @@
 		<div class="page">
 			<header class="page-header">
 				<a class="page-header__logo" href="index.html">
-					<img src="img/mobile/mishka-logo-mobile.svg" width="86" height="35" alt="Логотип Магазин Мишка.">
+					<picture>
+						<source media="(min-width: 1150px)" srcset="img/mishka-logo-desktop.svg" width="149" height="72">
+						<source media="(min-width: 768px)" srcset="img/mishka-logo-tablet.svg" width="114" height="47">
+						<img src="img/mishka-logo-mobile.svg" width="86" height="35" alt="Логотип Магазин Мишка.">
+					</picture>
 				</a>
 				<button class="page-header__menu" type="button">
 					<span class="visually-hidden">Открыть меню</span>
 				</button>
+				<ul class="page-header__menu-main menu-main">
+					<li class="menu-main__item">
+						<a class="menu-main__link" href="catalog.html">Каталог товаров</a>
+					</li>
+					<li class="menu-main__item">
+						<a class="menu-main__link" href="form.html">Вязание на заказ</a>
+					</li>
+				</ul>
+				<ul class="page-header__menu-service menu-service">
+					<li class="menu-service__item menu-service__item--bordered">
+						<a class="menu-service__link menu-service__link--search" href="#!">
+							<span class="visually-hidden">Поиск по сайту</span>
+						</a>
+					</li>
+					<li class="menu-service__item menu-service__item--cart">
+						<a class="menu-service__link menu-service__link--cart" href="#!">
+							<span>Корзина: пока пуста</span>
+						</a>
+					</li>
+				</ul>
+				<ul class="page-header__menu-additions">
+					<li><a href="#!">Новые поступления</a></li>
+					<li><a href="#!">Распродажа</a></li>
+				</ul>
+				<p class="page-header__description">Бесплатная доставка по России</p>
 			</header>
 
 			{% block main %}{% endblock %}

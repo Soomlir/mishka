@@ -1,6 +1,10 @@
 .page-footer {
   margin-top: 41px;
   background-color: #f1f1f1;
+
+  @media (min-width: 768px) {
+    margin-top: 78px;
+  }
 }
 
 .social-list {

@@ -12,3 +12,8 @@ body {
 .page__footer {
   margin-top: auto;
 }
+
+picture,
+source {
+  display: contents;
+}
