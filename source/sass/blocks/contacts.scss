@@ -1,6 +1,11 @@
 .contacts {
   position: relative;
   padding: 44px 26px 0;
+
+  @media (min-width: 768px) {
+    padding: 0 50px;
+    padding-top: 120px;
+  }
 }
 
 .contacts::before {
@@ -23,6 +28,16 @@
   font-size: 25px;
   line-height: 30px;
   color: #000000;
+
+  @media (min-width: 768px) {
+    padding: 47px 122px 22px 0;
+    font-size: 43px;
+    line-height: 50px;
+
+    background-image: url("../img/tablet/flag.svg");
+    background-repeat: no-repeat;
+    background-position: top 27px right 3px;
+  }
 }
 
 .contacts__table {
@@ -34,16 +49,43 @@
   color: #444444;
 }
 
-.table-data {
+.table {
+  margin-bottom: 34px;
+
+  @media (min-width: 768px) {
+    width: 668px;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 30px;
+    color: #444444;
+  }
+}
+
+.table__tbody {
+  @media (min-width: 768px) {
+    display: flex;
+  }
+}
+
+.table__data {
   padding-top: 27px;
   vertical-align: top;
+
+  @media (min-width: 768px) {
+    padding-top: 0;
+  }
 }
 
-.td-indent {
+.table__td--indent {
+  padding-top: 27px;
   padding-bottom: 27px;
+
+  @media (min-width: 768px) {
+    padding: 0;
+  }
 }
 
-.td-decorated {
+.table__email--decorated {
   display: inline;
   padding-bottom: 2px;
   font-weight: 400;
@@ -52,16 +94,16 @@
   color: #444444;
   text-decoration: none;
   border-bottom: 1px solid #62d1ba;
+
+  @media (min-width: 768px) {
+    font-size: 17px;
+  }
 }
 
-.table-td__small {
+.table__td--small {
   width: 76px;
 }
 
-.table-td__large {
+.table__td--large {
   width: 183px;
-}
-
-.table-td__indent {
-  padding-top: 27px;
 }

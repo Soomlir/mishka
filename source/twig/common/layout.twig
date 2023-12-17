@@ -40,9 +40,13 @@
 						</a>
 					</li>
 				</ul>
-				<ul class="page-header__menu-additions">
-					<li><a href="#!">Новые поступления</a></li>
-					<li><a href="#!">Распродажа</a></li>
+				<ul class="page-header__menu-additions menu-additions">
+					<li class="menu-additions__item">
+						<a class="menu-additions__link" href="#!">Новые поступления</a>
+					</li>
+					<li class="menu-additions__item">
+						<a class="menu-additions__link" href="#!">Распродажа</a>
+					</li>
 				</ul>
 				<p class="page-header__description">Бесплатная доставка по России</p>
 			</header>
@@ -50,6 +54,11 @@
 			{% block main %}{% endblock %}
 
 			<footer class="page-footer">
+				<a class="page-footer__logo" href="#!">
+					<svg class="page-footer__logo-img" width="102" height="34" role="img" focusable="false">
+						<use xlink:href="img/tablet/logo-footer.svg#logo-footer"></use>
+					</svg>
+				</a>
 				<div class="page-footer__social">
 					<ul class="page-footer__list social-list">
 						<li class="social-list__item">

@@ -3,7 +3,38 @@
   background-color: #f1f1f1;
 
   @media (min-width: 768px) {
-    margin-top: 78px;
+    display: flex;
+    margin-top: 64px;
+    padding-bottom: 20px;
+  }
+
+  @media (min-width: 1150px) {
+    justify-content: space-between;
+    height: 143px;
+    margin-top: 105px;
+  }
+}
+
+.page-footer__logo {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+    margin-top: 50px;
+    margin-left: 50px;
+  }
+}
+
+.page-footer__logo-img {
+  @media (min-width: 768px) {
+    &:hover,
+    &:focus {
+      fill: #46c1ae;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
   }
 }
 
@@ -13,8 +44,19 @@
   width: 142px;
   height: 27px;
   margin: 0 auto;
+  margin-right: auto;
+  margin-left: auto;
   padding: 25px 59px 28px;
   list-style: none;
+
+  @media (min-width: 768px) {
+    margin: 0;
+    padding: 56px 52px 28px 121px;
+  }
+
+  @media (min-width: 1150px) {
+    padding-left: 118px;
+  }
 }
 
 .social-list__link {
@@ -54,6 +96,16 @@
   font-size: 19px;
   line-height: 18px;
   color: #000000;
+
+  @media (min-width: 768px) {
+    width: 182px;
+    padding: 48px 50px 23px 69px;
+  }
+
+  @media (min-width: 1150px) {
+    padding-top: 49px;
+    padding-right: 50px;
+  }
 }
 
 .page-footer__copyright-logo {

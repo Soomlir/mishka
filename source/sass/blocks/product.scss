@@ -24,6 +24,12 @@
       background-repeat: repeat-x;
     }
   }
+
+  @media (min-width: 1150px) {
+    &::before {
+      background-image: url("../img/desktop/zigzag-fill-desktop.svg");
+    }
+  }
 }
 
 .product__header {
@@ -50,6 +56,11 @@
   @media (min-width: 768px) {
     font-size: 43px;
     line-height: 50px;
+  }
+
+  @media (min-width: 1150px) {
+    font-size: 53px;
+    line-height: 57px;
   }
 }
 
@@ -80,7 +91,7 @@
   color: #444444;
 
   @media (min-width: 768px) {
-    margin-bottom: 20px;
+    margin-bottom: 8px;
     font-size: 17px;
     line-height: 30px;
   }
@@ -90,9 +101,12 @@
   width: 260px;
   margin: 0;
   margin-bottom: 25px;
+  padding-top: 19px;
 
   @media (min-width: 768px) {
     align-self: start;
+    margin-bottom: 25px;
+    padding-top: 0;
   }
 }
 
@@ -127,10 +141,20 @@
   line-height: 24px;
   text-align: center;
   color: #444444;
+
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+    font-size: 20px;
+  }
 }
 
 .product__order {
   width: 260px;
   margin: 0;
   padding: 14px 28px;
+
+  @media (min-width: 768px) {
+    width: 292px;
+    height: 52px;
+  }
 }

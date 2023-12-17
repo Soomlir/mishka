@@ -25,7 +25,7 @@
 			</header>
 			<p class="product__text">
 				Экологически чистая пряжа,
-				ручная работа. Доступны в шести расцветках и трёх размерах.
+												ручная работа. Доступны в шести расцветках и трёх размерах.
 			</p>
 			<table class="product__attributes">
 				<tbody>
@@ -44,6 +44,7 @@
 				</tbody>
 			</table>
 			<picture>
+				<source media="(min-width: 1150px)" srcset="img/desktop/triple-set-desktop.jpg" width="525" height="636">
 				<source media="(min-width: 768px)" srcset="img/tablet/triple-set-tablet.jpg" width="334" height="404">
 				<img class="product__image" src="img/mobile/triple-set-mobile.jpg" width="260" height="315" alt="Вязанные корзинки ручной работы.">
 			</picture>
@@ -79,36 +80,39 @@
 						В отчаянии, я накупила аксессуаров и игрушек в Мишке,<br>
 						и мои фотографии сразу стали более стильными, а также набирают больше лайков!
 					</p>
-					<p class="reviews__author">
-						Анастасия Красильникова
-						<span class="reviews__author-contact">@misssssiskras</span>
-					</p>
+					<div class="reviews__info">
+						<p class="reviews__author">
+							Анастасия Красильникова
+							<span class="reviews__author-contact">@misssssiskras</span>
+						</p>
+						<p class="reviews__button-wrapper">
+							<button class="reviews__prev" type="button">
+								<span class="visually-hidden">Предыдущий отзыв</span>
+							</button>
+							<button class="reviews__next" type="button">
+								<span class="visually-hidden">Следующий отзыв</span>
+							</button>
+						</p>
+					</div>
 				</li>
 			</ul>
-			<div class="reviews__button-wrapper">
-				<button class="reviews__prev" type="button">
-					<span class="visually-hidden">Предыдущий отзыв</span>
-				</button>
-				<button class="reviews__next" type="button">
-					<span class="visually-hidden">Следующий отзыв</span>
-				</button>
-			</div>
+
 			<a class="reviews__new button" href="#!">Написать</a>
 		</section>
 
 		<section class="contacts">
 			<h2 class="contacts__heading">Контакты</h2>
-			<table class="contacts__table">
-				<tbody class="table-td">
+			<table class="contacts__table table">
+				<tbody class="table__tbody">
 					<tr>
-						<td class="table-td__small">e-mail:</td>
-						<td class="table-td__large">
-							<a class="td-decorated" href="#!">info@mimimishkashop.ru</a>
+						<td class="table__td--small">e-mail:</td>
+						<td class="table__td--large">
+							<a class="table__email--decorated" href="#!">info@mimimishkashop.ru</a>
 						</td>
 					</tr>
 					<tr>
-						<td class="table-data table-td__small">адрес:</td>
-						<td class="table-td__indent">г. Санкт-Петербург<br>ул. Большая Конюшенная<br>д. 19/8, офис 101</td>
+						<td class="table__data table__td--small">адрес:</td>
+						<td class="table__td--indent">г. Санкт-Петербург<br>ул. Большая Конюшенная<br>д. 19/8, офис 101</td>
 					</tr>
 				</tbody>
 			</table>
@@ -116,8 +120,11 @@
 
 		<section class="address">
 			<h2 class="visually-hidden">Наше расположение на карте</h2>
-			<img class="address__map" src="img/mobile/map-mobile.jpg" width="320" height="456" alt="Наше расположение на карте.">
-			<a class="address__link button">Напишите нам</a>
+			<picture>
+				<source media="(min-width: 768px)" srcset="img/tablet/map-tablet@1x.jpg" width="768" height="457">
+				<img class="address__map" src="img/mobile/map-mobile.jpg" width="320" height="456" alt="Наше расположение на карте.">
+			</picture>
+			<a class="address__link button" href="#!">Напишите нам</a>
 		</section>
 	</main>
 {% endblock %}

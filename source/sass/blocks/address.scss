@@ -6,4 +6,10 @@
   width: 260px;
   margin: 0 30px;
   padding: 14px 24px;
+
+  @media (min-width: 768px) {
+    width: 230px;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
