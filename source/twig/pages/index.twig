@@ -105,26 +105,23 @@
 			<table class="contacts__table table">
 				<tbody class="table__tbody">
 					<tr>
-						<td class="table__td--small">e-mail:</td>
-						<td class="table__td--large">
-							<a class="table__email--decorated" href="#!">info@mimimishkashop.ru</a>
+						<td class="table__td table__td--small">e-mail:</td>
+						<td class="table__td table__td--large">
+							<a class="table__email table__email--decorated" href="#!">info@mimimishkashop.ru</a>
 						</td>
 					</tr>
 					<tr>
-						<td class="table__data table__td--small">адрес:</td>
-						<td class="table__td--indent">г. Санкт-Петербург<br>ул. Большая Конюшенная<br>д. 19/8, офис 101</td>
+						<td class="table__td table__data table__td--small">адрес:</td>
+						<td class="table__td table__td--indent">г. Санкт-Петербург<br>ул. Большая Конюшенная<br>д. 19/8, офис 101</td>
 					</tr>
 				</tbody>
 			</table>
-		</section>
-
-		<section class="address">
-			<h2 class="visually-hidden">Наше расположение на карте</h2>
 			<picture>
-				<source media="(min-width: 768px)" srcset="img/tablet/map-tablet@1x.jpg" width="768" height="457">
-				<img class="address__map" src="img/mobile/map-mobile.jpg" width="320" height="456" alt="Наше расположение на карте.">
+				<source media="(min-width: 1150px)" srcset="img/desktop/map-desktop@1x.jpg" width="527" height="457">
+ 				<source media="(min-width: 768px)" srcset="img/tablet/map-tablet@1x.jpg" width="768" height="457">
+				<img class="contacts__address" src="img/mobile/map-mobile.jpg" width="320" height="456" alt="Наше расположение на карте.">
 			</picture>
-			<a class="address__link button" href="#!">Напишите нам</a>
+			<a class="contacts__link button" href="#!">Напишите нам</a>
 		</section>
 	</main>
 {% endblock %}

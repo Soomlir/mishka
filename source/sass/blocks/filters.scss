@@ -277,13 +277,14 @@
 .filters__checkbox:checked::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -2px;
+  left: -2px;
   width: 38px;
   height: 38px;
   margin: auto;
   background-image: url("../img/mobile/checkbox.svg");
   background-position: 50% 50%;
+  background-repeat: no-repeat;
 }
 
 .filters__checkbox-label {
@@ -318,7 +319,7 @@
 
   @media (min-width: 768px) {
     display: grid;
-    grid-template-columns: 167px 1fr;
+    grid-template-columns: 126px 1fr;
     padding-top: 55px;
     padding-bottom: 18px;
   }
