@@ -92,6 +92,8 @@
 }
 
 .filters__legend--radio {
+  padding-right: 21px;
+
   @media (min-width: 768px) {
     float: left;
     padding-top: 16px;
@@ -100,7 +102,7 @@
 
 .filters__legend {
   margin-bottom: 31px;
-  padding-right: 20px;
+  padding-right: 14px;
   font-weight: 700;
   font-size: 17px;
   line-height: 16px;
@@ -133,7 +135,7 @@
 }
 
 .filters__inner--indent {
-  margin-bottom: 33px;
+  margin-bottom: 32px;
 
   @media (min-width: 768px) {
     grid-column: 2 / -1;
@@ -283,8 +285,8 @@
   height: 38px;
   margin: auto;
   background-image: url("../img/mobile/checkbox.svg");
-  background-position: 50% 50%;
   background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 
 .filters__checkbox-label {
@@ -304,7 +306,7 @@
 }
 
 .filters__legend--indent {
-  margin-bottom: 24px;
+  margin-bottom: 25px;
 
   @media (min-width: 768px) {
     float: left;
@@ -355,6 +357,7 @@
 .filters__input-text {
   box-sizing: border-box;
   width: 260px;
+  height: 52px;
   padding: 15px 16px 12px 0;
   border: none;
   border-bottom: 2px solid #000000;

@@ -9,6 +9,7 @@
   @media (min-width: 1150px) {
     display: grid;
     grid-template-columns: 524px 527px;
+    grid-template-rows: 171px 200px 52px;
     margin-top: 40px;
     padding: 0 50px;
     padding-top: 120px;
@@ -48,8 +49,11 @@
 
   @media (min-width: 1150px) {
     width: 291px;
+    margin-bottom: 0;
+    padding: 79px 51px 22px 174px;
     font-size: 53px;
     line-height: 57px;
+    background-position: top 62px left 63px;
   }
 }
 
@@ -68,6 +72,7 @@
 
   @media (min-width: 1150px) {
     grid-row: 2 / 2;
+    font-size: 17px;
   }
 }
 
@@ -80,6 +85,11 @@
     font-size: 17px;
     line-height: 30px;
     color: #444444;
+  }
+
+  @media (min-width: 1150px) {
+    width: auto;
+    padding-left: 168px;
   }
 }
 

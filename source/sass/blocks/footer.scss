@@ -1,5 +1,5 @@
 .page-footer {
-  margin-top: 41px;
+  margin-top: 40px;
   background-color: #f1f1f1;
 
   @media (min-width: 768px) {
@@ -22,13 +22,9 @@
     display: block;
     margin-top: 50px;
     margin-left: 50px;
-  }
-}
 
-.page-footer__logo-img {
-  @media (min-width: 768px) {
-    &:hover,
-    &:focus {
+    &:hover .page-footer__logo-img,
+    &:focus .page-footer__logo-img {
       fill: #46c1ae;
     }
 
@@ -37,6 +33,7 @@
     }
   }
 }
+
 
 .social-list {
   display: flex;
