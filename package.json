@@ -1,7 +1,8 @@
 {
   "private": true,
   "devDependencies": {
-    "autoprefixer": "10.4.0",
+    "@stylistic/stylelint-config": "1.0.1",
+    "autoprefixer": "10.4.16",
     "browser-sync": "2.29.3",
     "cssnano": "5.0.11",
     "del": "7.0.0",
@@ -28,12 +29,12 @@
     "imagemin-pngquant": "9.0.2",
     "imagemin-svgo": "10.0.1",
     "postcss-reporter": "7.0.5",
-    "postcss-scss": "4.0.6",
+    "postcss-scss": "4.0.9",
     "postcss-sort-media-queries": "4.3.0",
     "pre-commit": "1.2.2",
-    "stylelint": "13.13.1",
-    "stylelint-config-htmlacademy": "0.1.11",
-    "stylelint-order-htmlacademy": "2.0.6",
+    "stylelint": "16.1.0",
+    "stylelint-config-standard": "36.0.0",
+    "stylelint-order-htmlacademy": "2.1.0",
     "svgo": "2.8.0"
   },
   "scripts": {
