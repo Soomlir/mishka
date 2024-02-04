@@ -57,6 +57,10 @@
     line-height: 30px;
     color: #ffffff;
   }
+
+  @media (min-width: 1150px) {
+    margin-top: 151px;
+  }
 }
 
 .promo__products-item {

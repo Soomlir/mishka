@@ -57,6 +57,7 @@
 
 .page-header__menu-main {
   display: none;
+  background-color: #f9f9f9;
 
   @media (min-width: 768px) {
     display: flex;
@@ -65,7 +66,6 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    background-color: #f9f9f9;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
   }
 
@@ -99,6 +99,7 @@
 
 .page-header__menu-additions {
   display: none;
+  background-color: #f9f9f9;
 
   @media (min-width: 768px) {
     display: none;
@@ -113,7 +114,6 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    background-color: #f9f9f9;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
   }
 }
@@ -230,6 +230,7 @@
 
 .page-header__description {
   display: none;
+  background-color: #f9f9f9;
 
   @media (min-width: 768px) {
     display: block;
@@ -237,17 +238,16 @@
     box-sizing: border-box;
     width: 50%;
     margin: 0;
-    padding: 20px 50px 20px 92px;
+    padding: 22px 50px 20px 92px;
     font-size: 15px;
     line-height: 24px;
     text-align: right;
     color: #444444;
-    background-color: #f9f9f9;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
   }
 
   @media (min-width: 1150px) {
     order: 5;
-    padding: 20px 51px 20px 92px;
+    padding: 23px 51px 19px 92px;
   }
 }

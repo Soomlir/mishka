@@ -19,8 +19,10 @@
   }
 
   @media (min-width: 768px) {
+    margin-bottom: 0;
     padding: 0 50px;
-    padding-top: 99px;
+    padding-top: 72px;
+    padding-bottom: 26px;
 
     &::before {
       top: 0;
@@ -29,13 +31,23 @@
       height: 17px;
       background-image: url("../img/tablet/zigzag-line.svg");
       background-repeat: repeat-x;
+      background-size: 768px 17px;
     }
   }
 
   @media (min-width: 1150px) {
-    padding-top: 49px;
-    padding-right: 225px;
-    padding-left: 225px;
+    margin-right: 50px;
+    margin-left: 50px;
+    padding-top: 110px;
+    padding-right: 175px;
+    padding-left: 175px;
+
+    &::before {
+      top: 21px;
+      height: 23px;
+      background-image: url("../img/desktop/zigzag-desktop.svg");
+      background-size: 1050px 23px;
+    }
   }
 }
 

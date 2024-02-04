@@ -5,15 +5,16 @@
   @media (min-width: 768px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-top: 81px;
+    margin-top: 56px;
     padding: 0 50px;
     padding-top: 78px;
+    padding-bottom: 86px;
     background-image: url("../img/tablet/review-bg.jpg");
     background-repeat: no-repeat;
   }
 
   @media (min-width: 1150px) {
-    margin-top: 89px;
+    margin-top: 62px;
     margin-left: 50px;
     padding-bottom: 68px;
     padding-left: 175px;
@@ -87,6 +88,11 @@
   @media (min-width: 768px) {
     font-size: 18px;
   }
+
+  @media (min-width: 1150px) {
+    font-weight: 700;
+    font-size: 17px;
+  }
 }
 
 .reviews__author-contact {
@@ -124,7 +130,7 @@
   }
 
   @media (min-width: 1150px) {
-    margin-right: 19px;
+    margin-right: 20px;
   }
 }
 

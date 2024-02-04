@@ -1,18 +1,20 @@
 .contacts {
   position: relative;
   padding-top: 44px;
+  padding-bottom: 39px;
 
   @media (min-width: 768px) {
-    padding-top: 120px;
+    margin-bottom: 18px;
+    padding-top: 34px;
   }
 
   @media (min-width: 1150px) {
     display: grid;
     grid-template-columns: 524px 527px;
-    grid-template-rows: 171px 200px 52px;
-    margin-top: 40px;
-    padding: 0 50px;
+    grid-template-rows: 166px 239px 52px;
+    margin: 40px 50px 0;
     padding-top: 120px;
+    padding-bottom: 105px;
   }
 }
 
@@ -26,6 +28,19 @@
   height: 6px;
   background-image: url("../img/mobile/icons/zigzag.svg");
   background-size: 320px 6px;
+
+  @media (min-width: 768px) {
+    height: 17px;
+    background-image: url("../img/tablet/zigzag-line.svg");
+    background-size: 768px 17px;
+  }
+
+  @media (min-width: 1150px) {
+    top: 26px;
+    height: 23px;
+    background-image: url("../img/desktop/zigzag-desktop.svg");
+    background-size: 1050px 23px;
+  }
 }
 
 .contacts__heading {
@@ -58,7 +73,7 @@
 
 .contacts__table {
   margin-bottom: 60px;
-  padding: 0 30px;
+  padding: 0 27px;
   font-weight: 400;
   font-size: 14px;
   line-height: 30px;
@@ -66,7 +81,9 @@
   color: #444444;
 
   @media (min-width: 768px) {
-    padding: 0 45px;
+    width: 100%;
+    margin-bottom: 44px;
+    padding-left: 45px;
   }
 
   @media (min-width: 1150px) {
@@ -79,7 +96,6 @@
   margin-bottom: 34px;
 
   @media (min-width: 768px) {
-    width: 668px;
     font-weight: 400;
     font-size: 17px;
     line-height: 30px;
@@ -95,6 +111,11 @@
 .table__tbody {
   @media (min-width: 768px) {
     display: flex;
+    width: 100%;
+
+    tr {
+      width: 332px;
+    }
   }
 
   @media (min-width: 1150px) {
@@ -109,6 +130,10 @@
   @media (min-width: 768px) {
     padding-top: 0;
   }
+
+  @media (min-width: 1150px) {
+    padding-top: 26px;
+  }
 }
 
 .table__td--indent {
@@ -117,6 +142,15 @@
 
   @media (min-width: 768px) {
     padding: 0;
+  }
+
+  @media (min-width: 1150px) {
+    width: 235px;
+    padding-top: 26px;
+
+    & .no-vission {
+      display: none;
+    }
   }
 }
 
@@ -131,12 +165,21 @@
   border-bottom: 1px solid #62d1ba;
 
   @media (min-width: 768px) {
+    padding-bottom: 1px;
     font-size: 17px;
+  }
+
+  @media (min-width: 1150px) {
+    padding-bottom: 7px;
   }
 }
 
 .table__td--small {
   width: 76px;
+
+  @media (min-width: 768px) {
+    width: 74px;
+  }
 }
 
 .table__td--large {
@@ -145,6 +188,10 @@
 
 .contacts__address {
   margin-bottom: 35px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 50px;
+  }
 }
 
 .contacts__link {
@@ -156,9 +203,11 @@
     width: 230px;
     margin-right: auto;
     margin-left: auto;
+    font-size: 17px;
   }
 
   @media (min-width: 1150px) {
     grid-row: 3;
+    margin-left: 175px;
   }
 }

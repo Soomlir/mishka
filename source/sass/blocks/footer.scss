@@ -1,17 +1,13 @@
 .page-footer {
-  margin-top: 40px;
   background-color: #f1f1f1;
 
   @media (min-width: 768px) {
     display: flex;
-    margin-top: 64px;
-    padding-bottom: 20px;
   }
 
   @media (min-width: 1150px) {
     justify-content: space-between;
     height: 143px;
-    margin-top: 105px;
   }
 }
 
@@ -42,7 +38,7 @@
   margin: 0 auto;
   margin-right: auto;
   margin-left: auto;
-  padding: 25px 59px 28px;
+  padding: 27px 59px 28px;
   list-style: none;
 
   @media (min-width: 768px) {
