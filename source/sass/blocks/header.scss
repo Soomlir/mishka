@@ -46,7 +46,7 @@
   width: 20px;
   height: 14px;
   background: transparent;
-  background-image: url("../img/mobile/icons/menu.svg");
+  background-image: url("../img/icons/menu.svg");
   border: none;
   cursor: pointer;
 
@@ -57,7 +57,11 @@
 
 .page-header__menu-main {
   display: none;
-  background-color: #f9f9f9;
+  background-color: #f1f1f1;
+
+  &--another {
+    background-color: #f9f9f9;
+  }
 
   @media (min-width: 768px) {
     display: flex;
@@ -99,7 +103,11 @@
 
 .page-header__menu-additions {
   display: none;
-  background-color: #f9f9f9;
+  background-color: #f1f1f1;
+
+  &--another {
+    background-color: #f9f9f9;
+  }
 
   @media (min-width: 768px) {
     display: none;
@@ -161,7 +169,7 @@
     left: 31px;
     width: 21px;
     height: 18px;
-    background-image: url("../img/tablet/cart.svg");
+    background-image: url("../img/cart.svg");
     background-repeat: no-repeat;
   }
 
@@ -172,7 +180,7 @@
     left: 33px;
     width: 18px;
     height: 18px;
-    background-image: url("../img/tablet/search.svg");
+    background-image: url("../img/search.svg");
     background-repeat: no-repeat;
   }
 }
@@ -230,7 +238,11 @@
 
 .page-header__description {
   display: none;
-  background-color: #f9f9f9;
+  background-color: #f1f1f1;
+
+  &--another {
+    background-color: #f9f9f9;
+  }
 
   @media (min-width: 768px) {
     display: block;

@@ -26,19 +26,19 @@
   left: 0;
   z-index: 1;
   height: 6px;
-  background-image: url("../img/mobile/icons/zigzag.svg");
+  background-image: url("../img/icons/zigzag.svg");
   background-size: 320px 6px;
 
   @media (min-width: 768px) {
     height: 17px;
-    background-image: url("../img/tablet/zigzag-line.svg");
+    background-image: url("../img/zigzag-line.svg");
     background-size: 768px 17px;
   }
 
   @media (min-width: 1150px) {
     top: 26px;
     height: 23px;
-    background-image: url("../img/desktop/zigzag-desktop.svg");
+    background-image: url("../img/zigzag-desktop.svg");
     background-size: 1050px 23px;
   }
 }
@@ -56,7 +56,7 @@
     padding: 51px 122px 22px 50px;
     font-size: 43px;
     line-height: 50px;
-    background-image: url("../img/tablet/flag.svg");
+    background-image: url("../img/flag.svg");
     background-repeat: no-repeat;
     background-position: top 29px right 53px;
   }

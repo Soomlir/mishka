@@ -30,7 +30,7 @@
       left: 0;
       width: 100%;
       height: 24px;
-      background-image: url("../img/tablet/zigzag-fill.jpg");
+      background-image: url("../img/zigzag-fill.jpg");
     }
   }
 
@@ -41,7 +41,7 @@
     line-height: 57px;
 
     &::after {
-      background-image: url("../img/desktop/wave-desktop.svg");
+      background-image: url("../img/wave-desktop.svg");
     }
   }
 }
@@ -99,15 +99,6 @@
   }
 }
 
-.filters__legend--radio {
-  padding-right: 21px;
-
-  @media (min-width: 768px) {
-    float: left;
-    padding-top: 16px;
-  }
-}
-
 .filters__legend {
   margin-bottom: 31px;
   padding-right: 14px;
@@ -120,11 +111,19 @@
   @media (min-width: 768px) {
     float: left;
     padding-top: 17px;
-    padding-left: 60px;
   }
 
   @media (min-width: 1150px) {
     padding-top: 19px;
+  }
+}
+
+.filters__legend--radio {
+  padding-right: 21px;
+
+  @media (min-width: 768px) {
+    float: left;
+    padding-top: 16px;
   }
 }
 
@@ -293,7 +292,7 @@
   width: 38px;
   height: 38px;
   margin: auto;
-  background-image: url("../img/mobile/checkbox.svg");
+  background-image: url("../img/checkbox-mobile.svg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
 
@@ -305,7 +304,7 @@
     width: 38px;
     height: 38px;
     margin: auto;
-    background-image: url("../img/tablet/checkbox.svg");
+    background-image: url("../img/checkbox.svg");
     background-repeat: no-repeat;
     background-position: 50% 50%;
   }
@@ -337,7 +336,7 @@
 }
 
 .filters-fln {
-  margin-bottom: 34px;
+  margin-bottom: 32px;
 
   & legend {
     margin-bottom: 5px;
@@ -363,7 +362,7 @@
   @media (min-width: 768px) {
     gap: 24px;
     padding-top: 0;
-    padding-left: 40px;
+    padding-left: 32px;
   }
 }
 
@@ -401,17 +400,18 @@
   width: 260px;
   height: 52px;
   padding: 15px 16px 12px 0;
+  font-family: inherit;
   border: none;
   border-bottom: 2px solid #000000;
   outline: none;
+  opacity: 1;
 
   @media (min-width: 768px) {
     width: 100%;
     margin: 0;
     padding: 0;
     padding: 15px 16px 17px 18px;
-    font-size: 19px;
-    line-height: 18px;
+    font-size: 20px;
   }
 }
 
@@ -420,8 +420,8 @@
   font-weight: 400;
   font-size: 17px;
   line-height: 18px;
-  color: #000000;
-  opacity: 0.3;
+  color: #f3f3f3;
+  opacity: 1;
 }
 
 .filters__input-text:hover,
@@ -430,9 +430,12 @@
 }
 
 .filters__tel {
+  padding: 15px 10px 17px 0;
+  font-family: inherit;
   background-color: transparent;
-  background-image: url("../img/mobile/icons/phone.svg");
+  background-image: url("../img/icons/phone.svg");
   background-position: 229px 10px;
+  opacity: 1;
 
   @media (min-width: 768px) {
     background-position: 95% 10px;
@@ -504,13 +507,16 @@
 
 .filters__email {
   margin-bottom: 34px;
+  padding: 18px 10px 14px 0;
   font-weight: 400;
   font-size: 17px;
   line-height: 18px;
+  font-family: inherit;
   color: #000000;
-  background-image: url("../img/mobile/icons/mail.svg");
+  background-image: url("../img/icons/mail.svg");
   background-position: 225px 19px;
   outline: none;
+  opacity: 1;
 
   @media (min-width: 768px) {
     background-color: transparent;
@@ -519,7 +525,7 @@
 }
 
 .filters__email-indent {
-  margin-top: 34px;
+  margin-top: 32px;
 
   @media (min-width: 768px) {
     padding-bottom: 16px;
@@ -552,14 +558,16 @@
   width: 260px;
   height: 142px;
   margin-bottom: 16px;
-  padding: 17px 17px 89px;
+  padding: 15px 17px 60px;
   font-weight: 400;
   font-size: 17px;
   line-height: 18px;
+  font-family: inherit;
   color: rgba(0, 0, 0, 0.3);
   background: #ffffff;
   border: 2px solid #444444;
   outline: none;
+  opacity: 1;
 
   @media (min-width: 768px) {
     width: 100%;

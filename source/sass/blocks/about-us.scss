@@ -14,7 +14,7 @@
     left: 0;
     z-index: 1;
     height: 6px;
-    background-image: url("../img/mobile/icons/zigzag.svg");
+    background-image: url("../img/icons/zigzag.svg");
     background-size: 320px 6px;
   }
 
@@ -29,7 +29,7 @@
       left: 0;
       width: 100%;
       height: 17px;
-      background-image: url("../img/tablet/zigzag-line.svg");
+      background-image: url("../img/zigzag-line.svg");
       background-repeat: repeat-x;
       background-size: 768px 17px;
     }
@@ -45,7 +45,7 @@
     &::before {
       top: 21px;
       height: 23px;
-      background-image: url("../img/desktop/zigzag-desktop.svg");
+      background-image: url("../img/zigzag-desktop.svg");
       background-size: 1050px 23px;
     }
   }
@@ -135,7 +135,7 @@
   left: 8px;
   width: 33px;
   height: 38px;
-  background-image: url("../img/mobile/icons/icon-1.svg");
+  background-image: url("../img/icons/icon-1.svg");
 }
 
 .about-us__item--icon-2::before {
@@ -143,7 +143,7 @@
   left: 0;
   width: 47px;
   height: 27px;
-  background-image: url("../img/mobile/icons/icon-2.svg");
+  background-image: url("../img/icons/icon-2.svg");
 }
 
 .about-us__item--icon-3::before {
@@ -151,7 +151,7 @@
   left: 7px;
   width: 34px;
   height: 27px;
-  background-image: url("../img/mobile/icons/icon-3.svg");
+  background-image: url("../img/icons/icon-3.svg");
 }
 
 .about-us__item--icon-4::before {
@@ -159,7 +159,7 @@
   left: 3px;
   width: 35px;
   height: 34px;
-  background-image: url("../img/mobile/icons/icon-4.svg");
+  background-image: url("../img/icons/icon-4.svg");
 }
 
 .about-us__item--icon-5::before {
@@ -167,7 +167,7 @@
   left: -6px;
   width: 55px;
   height: 23px;
-  background-image: url("../img/mobile/icons/icon-5.svg");
+  background-image: url("../img/icons/icon-5.svg");
 }
 
 .about-us__item--icon-6::before {
@@ -175,5 +175,5 @@
   left: 3px;
   width: 33px;
   height: 32px;
-  background-image: url("../img/mobile/icons/icon-6.svg");
+  background-image: url("../img/icons/icon-6.svg");
 }
