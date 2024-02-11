@@ -20,7 +20,7 @@
 				<button class="page-header__menu" type="button">
 					<span class="visually-hidden">Открыть меню</span>
 				</button>
-				<ul class="page-header__menu-main page-header__menu-main--another menu-main">
+				<ul class="page-header__menu-main menu-main menu-main--another">
 					<li class="menu-main__item">
 						<a class="menu-main__link" href="catalog.html">Каталог товаров</a>
 					</li>
@@ -40,7 +40,7 @@
 						</a>
 					</li>
 				</ul>
-				<ul class="page-header__menu-additions page-header__menu-additions--another menu-additions">
+				<ul class="page-header__menu-additions menu-additions menu-additions--another">
 					<li class="menu-additions__item">
 						<a class="menu-additions__link" href="#!">Новые поступления</a>
 					</li>
@@ -49,6 +49,29 @@
 					</li>
 				</ul>
 				<p class="page-header__description page-header__description--another">Бесплатная доставка по России</p>
+
+				<ul class="page-header__menu-mobile menu-mobile menu-mobile--close">
+					<li class="menu-mobile__item">
+						<a class="menu-mobile__link" href="catalog.html">
+							<span>Каталог товаров</span>
+						</a>
+					</li>
+					<li class="menu-mobile__item">
+						<a class="menu-mobile__link" href="form.html">
+							<span>Вязание на заказ</span>
+						</a>
+					</li>
+					<li class="menu-mobile__item">
+						<a class="menu-mobile__link menu-mobile__link--search" href="#!">
+							<span>Поиск по сайту</span>
+						</a>
+					</li>
+					<li class="menu-mobile__item">
+						<a class="menu-mobile__link menu-mobile__link--cart" href="#!">
+							<span>Корзина: пока пуста</span>
+						</a>
+					</li>
+				</ul>
 			</header>
 
 			{% block main %}{% endblock %}
@@ -87,6 +110,24 @@
 					</p>
 				</div>
 			</footer>
+			<div class="modal">
+				<a href="#!" class="modal__overlay"></a>
+				<div class="modal__content">
+					<form class="modal__form" action="#" method="get">
+						<h2 class="modal__title">Добавить в корзину</h2>
+						<p class="modal__text">Выберите размер:</p>
+						<p class="modal__group">
+							<input class="modal__input" id="s" type="radio" name="size" value="s" checked>
+							<label class="modal__button" for="s">s</label>
+							<input class="modal__input" id="m" type="radio" name="size" value="m">
+							<label class="modal__button" for="m">m</label>
+							<input class="modal__input" id="l" type="radio" name="size" value="l">
+							<label class="modal__button" for="l">l</label>
+						</p>
+						<button class="modal__submit button" type="submit">Добавить</button>
+					</form>
+				</div>
+			</div>
 		</div>
 
 		{% include 'base/scripts.twig' %}
