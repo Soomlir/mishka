@@ -5,11 +5,9 @@ button.addEventListener('click', () => {
   if (menuList.classList.contains('menu-mobile--close')) {
     menuList.classList.remove('menu-mobile--close');
     menuList.classList.add('menu-mobile--active');
-    // console.log(1);
-  // } else {
-  //   menuList.classList.add('menu-mobile--close');
-  //   menuList.classList.remove('menu-mobile--active');
-  //   console.log(2);
+  } else {
+    menuList.classList.add('menu-mobile--close');
+    menuList.classList.remove('menu-mobile--active');
   }
 });
 

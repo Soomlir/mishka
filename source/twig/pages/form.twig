@@ -9,7 +9,7 @@
 			<p class="filters__text">
 				Мы будем рады воплотить в жизнь<br>
 				ваши пожелания! Заполните простую форму заказа
-															и мы свяжемся с вами, чтобы уточнить детали.
+																			и мы свяжемся с вами, чтобы уточнить детали.
 			</p>
 			<form class="filters__form" method="post" action="https://echo.htmlacademy.ru">
 				<fieldset class="filters__fieldset filters__fieldset--radio">
@@ -80,12 +80,22 @@
 
 				<fieldset class="filters__fieldset filters__tel-wrap">
 					<legend class="filters__legend filters__legend-tel">Тел</legend>
-					<input class="filters__tel" type="tel" name="tel" aria-label="Введите ваш телефон." placeholder="+7 ХХХ ХХХ ХХ ХХ*">
+					<span class="filters__group filters__group--phone">
+						<input class="filters__tel" type="tel" name="tel" aria-label="Введите ваш телефон." placeholder="+7 ХХХ ХХХ ХХ ХХ*">
+						{# <svg width="25" height="24" role="img" focusable="false">
+							<use xlink:href="img/icons/phone.svg#phone"></use>
+						</svg> #}
+					</span>
 				</fieldset>
 
 				<fieldset class="filters__fieldset filters__email-indent email">
 					<legend class="filters__legend email__indent">E-mail</legend>
-					<input class="filters__email" type="email" name="email" aria-label="Введите ваш Email." placeholder="Ваш Email*">
+					<span class="filters__group filters__group--mail">
+						<input class="filters__email" type="email" name="email" aria-label="Введите ваш Email." placeholder="Ваш Email*">
+						{# <svg width="32" height="21" role="img" focusable="false">
+							<use xlink:href="img/icons/mail.svg#mail"></use>
+						</svg> #}
+					</span>
 				</fieldset>
 
 				<fieldset class="filters__fieldset filters__fieldset-textarea">
@@ -95,7 +105,7 @@
 				</fieldset>
 				<div class="filters__footer form-footer">
 					<p class="filters__textarea-info">*Поля обязательны для заполнения</p>
-					<button class="filters__form-submit" type="submit">Отправить заказ</button>
+					<button class="filters__form-submit button" type="submit">Отправить заказ</button>
 				</div>
 			</form>
 		</section>

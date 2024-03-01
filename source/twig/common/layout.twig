@@ -20,12 +20,12 @@
 				<button class="page-header__menu" type="button">
 					<span class="visually-hidden">Открыть меню</span>
 				</button>
-				<ul class="page-header__menu-main menu-main menu-main--another">
+				<ul class="page-header__menu-main menu-main {{ page == 'index' ? 'page-header__menu-main--another' :''}}">
 					<li class="menu-main__item">
 						<a class="menu-main__link" href="catalog.html">Каталог товаров</a>
 					</li>
 					<li class="menu-main__item">
-						<a class="menu-main__link" href="form.html">Вязание на заказ</a>
+						<a class="menu-main__link menu-main__link--indent" href="form.html">Вязание на заказ</a>
 					</li>
 				</ul>
 				<ul class="page-header__menu-service menu-service">
@@ -40,7 +40,7 @@
 						</a>
 					</li>
 				</ul>
-				<ul class="page-header__menu-additions menu-additions menu-additions--another">
+				<ul class="page-header__menu-additions {{ page == 'index' ? 'page-header__menu-additions--index' : '' }} menu-additions">
 					<li class="menu-additions__item">
 						<a class="menu-additions__link" href="#!">Новые поступления</a>
 					</li>
@@ -48,7 +48,7 @@
 						<a class="menu-additions__link" href="#!">Распродажа</a>
 					</li>
 				</ul>
-				<p class="page-header__description page-header__description--another">Бесплатная доставка по России</p>
+				<p class="page-header__description {{ page == 'index' ? 'page-header__description--index' : ''}}">Бесплатная доставка по России</p>
 
 				<ul class="page-header__menu-mobile menu-mobile menu-mobile--close">
 					<li class="menu-mobile__item">
@@ -79,33 +79,31 @@
 			<footer class="page-footer">
 				<a class="page-footer__logo" href="#!">
 					<svg class="page-footer__logo-img" width="102" height="34" role="img" focusable="false">
-						<use xlink:href="img/tablet/logo-footer.svg#logo-footer"></use>
+						<use xlink:href="img/logo-footer.svg#logo-footer"></use>
 					</svg>
 				</a>
 				<div class="page-footer__social">
 					<ul class="page-footer__list social-list">
-						<li class="social-list__item">
-							<a class="social-list__link social-list__link--vk" href="#!">
-								<span class="visually-hidden">Vk</span>
-							</a>
-						</li>
-						<li class="social-list__item">
-							<a class="social-list__link social-list__link--youtube" href="#!">
-								<span class="visually-hidden">YouTube</span>
-							</a>
-						</li>
-						<li class="social-list__item">
-							<a class="social-list__link social-list__link--telegram" href="#!">
-								<span class="visually-hidden">Telegram</span>
-							</a>
-						</li>
+						{% for link in ['Vkontakte', 'YouTube', 'Telegram'] %}
+							{% set id = link|lower %}
+							<li class="social-list__item">
+								<a class="social-list__link social-list__link--{{ id }}" href="#!">
+									<span class="visually-hidden">{{ link }}</span>
+									<svg width="28" height="22" aria-hidden="true" focusable="false">
+										<use xlink:href="img/icons/{{ id }}.svg#{{ id }}"></use>
+									</svg>
+								</a>
+							</li>
+						{% endfor %}
 					</ul>
 				</div>
 				<div class="page-footer__copyright">
 					<p class="page-footer__copyright-content">
 						Разработано
-						<a href="#">
-							<img class="page-footer__copyright-logo" src="img/icons/htmlacademy.svg" width="27" height="35" alt="Логотип .html academy.">
+						<a class="page-footer__link-logo" href="#!">
+							<svg class="page-footer__copyright-logo" width="27" height="35" role="img" focusable="false">
+								<use xlink:href="img/icons/htmlacademy.svg#htmlacademy"></use>
+							</svg>
 						</a>
 					</p>
 				</div>
@@ -132,6 +130,5 @@
 
 		{% include 'base/scripts.twig' %}
 
-		<script src="js/script.min.js"></script>
 	</body>
 </html>
