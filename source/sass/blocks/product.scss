@@ -20,7 +20,7 @@
       display: block;
       width: 100%;
       height: 24px;
-      background-image: url("../img/wave-tablet.svg");
+      background-image: url("../img/wave-tablet.png");
       background-repeat: repeat-x;
     }
 
@@ -38,7 +38,7 @@
     &::before {
       top: -23px;
       height: 23px;
-      background-image: url("../img/wave-desktop.svg");
+      background-image: url("../img/wave-desktop.png");
       background-position: 50% 0;
       background-size: 1150px 36px;
     }

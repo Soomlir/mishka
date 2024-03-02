@@ -139,18 +139,6 @@
   }
 }
 
-.reviews__prev {
-  background-image: url("../img/icons/arrow-left.svg");
-  background-repeat: no-repeat;
-  background-position: 48% 50%;
-}
-
-.reviews__next {
-  background-image: url("../img/icons/arrow-right.svg");
-  background-repeat: no-repeat;
-  background-position: 48% 50%;
-}
-
 .reviews__prev,
 .reviews__next {
   width: 129px;
@@ -160,6 +148,18 @@
   border: 1px solid #ececec;
   cursor: pointer;
 
+  @media (min-width: 768px) {
+    width: 50px;
+    height: 26px;
+    border: none;
+  }
+}
+
+.reviews__prev {
+  background-image: url("../img/icons/arrow-left.svg");
+  background-repeat: no-repeat;
+  background-position: 48% 50%;
+
   &:hover,
   &:focus {
     opacity: 0.6;
@@ -168,11 +168,20 @@
   &:active {
     opacity: 0.3;
   }
+}
 
-  @media (min-width: 768px) {
-    width: 50px;
-    height: 26px;
-    border: none;
+.reviews__next {
+  background-image: url("../img/icons/arrow-right.svg");
+  background-repeat: no-repeat;
+  background-position: 48% 50%;
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
   }
 }
 
