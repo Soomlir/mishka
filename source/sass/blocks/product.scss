@@ -148,6 +148,11 @@
     width: 292px;
     margin-bottom: 55px;
     padding-top: 0;
+
+    & tr {
+      display: grid;
+      grid-template-columns: 93px 1fr;
+    }
   }
 
   @media (min-width: 1150px) {
@@ -156,13 +161,6 @@
     width: 400px;
     padding-top: 11px;
     padding-left: 174px;
-  }
-}
-
-.product__attributes tr {
-  @media (min-width: 768px) {
-    display: grid;
-    grid-template-columns: 93px 1fr;
   }
 }
 

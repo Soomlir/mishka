@@ -14,11 +14,28 @@ button.addEventListener('click', () => {
 const modal = document.querySelector('.modal');
 const overlayButton = modal.querySelector('.modal__overlay');
 const buttonOpen = document.querySelector('.product__order');
+const cartButtons = document.querySelectorAll('.products__cart-link');
 
-buttonOpen.addEventListener('click', () => {
-  modal.classList.add('modal--show');
-});
+if (buttonOpen) {
+  buttonOpen.addEventListener('click', () => {
+    modal.classList.add('modal--show');
+  });
+}
 
 overlayButton.addEventListener('click', () => {
   modal.classList.remove('modal--show');
 });
+
+const showModal = (item) => {
+  item.addEventListener('click', () => {
+    modal.classList.add('modal--show');
+  });
+
+  overlayButton.addEventListener('click', () => {
+    modal.classList.remove('modal--show');
+  });
+};
+
+for (const cartItem of cartButtons) {
+  showModal(cartItem);
+}
