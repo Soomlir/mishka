@@ -10,8 +10,18 @@
     gap: 0 42px;
     padding: 0 50px;
     padding-bottom: 26px;
+  }
 
-    &::before {
+  @media (min-width: 1150px) {
+    grid-template-columns: 1fr 525px;
+    width: 1050px;
+    padding-top: 41px;
+    padding-right: calc(50% - 525px);
+    padding-left: calc(50% - 525px);
+  }
+
+  &::before {
+    @media (min-width: 768px) {
       content: "";
       position: absolute;
       top: -11px;
@@ -25,20 +35,19 @@
     }
 
     @media (min-width: 1150px) {
-      padding-right: calc(50% - 525px);
-      padding-left: calc(50% - 525px);
-    }
-  }
-
-  @media (min-width: 1150px) {
-    grid-template-columns: 1fr 525px;
-    width: 1050px;
-    padding-top: 41px;
-
-    &::before {
       top: -23px;
       height: 23px;
       background-image: url("../img/wave-desktop.png");
+      background-position: 50% 0;
+      background-size: 1150px 36px;
+    }
+  }
+
+  &--bg::before {
+    @media (min-width: 1150px) {
+      top: -23px;
+      height: 23px;
+      background-image: url("../img/wave-desktop-index.png");
       background-position: 50% 0;
       background-size: 1150px 36px;
     }

@@ -72,10 +72,10 @@
 
 .modal__input {
   display: none;
-}
 
-.modal__input:checked + label {
-  border-color: #62d1ba;
+  &:checked + label {
+    border-color: #62d1ba;
+  }
 }
 
 .modal__button {
