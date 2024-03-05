@@ -44,6 +44,7 @@
 
     @media (min-width: 1150px) {
       background-image: url("../img/wave-desktop.png");
+      background-size: 1150px 36px;
     }
   }
 }
@@ -88,7 +89,7 @@
   }
 
   @media (min-width: 1150px) {
-    padding-right: calc(50% - 350px);
+    padding-right: calc(50% - 525px);
     padding-left: calc(50% - 525px);
   }
 
@@ -376,6 +377,7 @@
   }
 
   @media (min-width: 1150px) {
+    padding-right: 175px;
     padding-left: 42px;
   }
 }
@@ -428,6 +430,10 @@
 
   @media (min-width: 768px) {
     padding-right: 50px;
+  }
+
+  @media (min-width: 1150px) {
+    margin-right: 175px;
   }
 
   &::after {
