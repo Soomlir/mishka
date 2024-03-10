@@ -9,7 +9,7 @@
 			<p class="filters__text">
 				Мы будем рады воплотить в жизнь<br>
 				ваши пожелания! Заполните простую форму заказа
-																			и мы свяжемся с вами, чтобы уточнить детали.
+																							и мы свяжемся с вами, чтобы уточнить детали.
 			</p>
 			<form class="filters__form" method="post" action="https://echo.htmlacademy.ru">
 				<fieldset class="filters__fieldset filters__fieldset--radio">
@@ -60,13 +60,13 @@
 						<p class="filters-last-name__text">
 							<label class="filters__label-last-name">
 								<span>Имя:</span>
-								<input class="filters__input-text" type="text" name="name" placeholder="Введите ваше имя*">
+								<input class="filters__input-text" type="text" name="name" placeholder="Введите ваше имя*" required>
 							</label>
 						</p>
 						<p class="filters-last-name__text">
 							<label class="filters__label-last-name">
 								<span>Фамилия:</span>
-								<input class="filters__input-text" id="last-name" type="text" name="last-name" placeholder="Укажите фамилию*">
+								<input class="filters__input-text" id="last-name" type="text" name="last-name" placeholder="Укажите фамилию*" required>
 							</label>
 						</p>
 						<p class="filters-last-name__text">
@@ -81,20 +81,16 @@
 				<fieldset class="filters__fieldset filters__tel-wrap">
 					<legend class="filters__legend filters__legend-tel">Тел</legend>
 					<span class="filters__group filters__group--phone">
-						<input class="filters__tel" type="tel" name="tel" aria-label="Введите ваш телефон." placeholder="+7 ХХХ ХХХ ХХ ХХ*">
-						{# <svg width="25" height="24" role="img" focusable="false">
-							<use xlink:href="img/icons/phone.svg#phone"></use>
-						</svg> #}
+						<input
+						class="filters__tel" type="tel" name="tel" aria-label="Введите ваш телефон." placeholder="+7 ХХХ ХХХ ХХ ХХ*" required>
 					</span>
 				</fieldset>
 
 				<fieldset class="filters__fieldset filters__email-indent email">
 					<legend class="filters__legend email__indent">E-mail</legend>
 					<span class="filters__group filters__group--mail">
-						<input class="filters__email" type="email" name="email" aria-label="Введите ваш Email." placeholder="Ваш Email*">
-						{# <svg width="32" height="21" role="img" focusable="false">
-							<use xlink:href="img/icons/mail.svg#mail"></use>
-						</svg> #}
+						<input
+						class="filters__email" type="email" name="email" aria-label="Введите ваш Email." placeholder="Ваш Email*" required>
 					</span>
 				</fieldset>
 

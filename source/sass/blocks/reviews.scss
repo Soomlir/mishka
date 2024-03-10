@@ -156,9 +156,10 @@
 }
 
 .reviews__prev {
-  background-image: url("../img/icons/arrow-left.svg");
+  background-image: url("../img/sprite.svg#arrow-left");
   background-repeat: no-repeat;
   background-position: 48% 50%;
+  background-size: 50px;
 
   &:hover,
   &:focus {
@@ -171,9 +172,10 @@
 }
 
 .reviews__next {
-  background-image: url("../img/icons/arrow-right.svg");
+  background-image: url("../img/sprite.svg#arrow-right");
   background-repeat: no-repeat;
   background-position: 48% 50%;
+  background-size: 50px;
 
   &:hover,
   &:focus {
