@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Mishka</title>
+		<link	rel="preload" href="fonts/OpenSans-Regular.woff2" as="font" crossorigin="anonymous">
+		<link rel="preload" href="fonts/OpenSans-Bold.woff2" as="font" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/style.min.css">
+	</head>
+
+	<body>
+		<div class="page">
+			<header class="page-header">
+				<a class="page-header__logo" href="index.html">
+					<picture>
+						<source media="(min-width: 1150px)" srcset="img/mishka-logo-desktop.svg" width="149" height="72">
+						<source media="(min-width: 768px)" srcset="img/mishka-logo-tablet.svg" width="114" height="47">
+						<img src="img/mishka-logo-mobile.svg" width="86" height="35" alt="Логотип Магазин Мишка.">
+					</picture>
+				</a>
+				<button class="page-header__menu" type="button">
+					<span class="visually-hidden">Открыть меню</span>
+				</button>
+				<ul class="page-header__menu-main menu-main {{ page == 'index' ? 'page-header__menu-main--another' :''}}">
+					<li class="menu-main__item">
+						<a class="menu-main__link" href="catalog.html">Каталог товаров</a>
+					</li>
+					<li class="menu-main__item">
+						<a class="menu-main__link menu-main__link--indent" href="form.html">Вязание на заказ</a>
+					</li>
+				</ul>
+				<ul class="page-header__menu-service menu-service">
+					<li class="menu-service__item menu-service__item--bordered">
+						<a class="menu-service__link menu-service__link--search" href="#!">
+							<span class="visually-hidden">Поиск по сайту</span>
+						</a>
+					</li>
+					<li class="menu-service__item menu-service__item--cart">
+						<a class="menu-service__link menu-service__link--cart" href="#!">
+							<span>Корзина: пока пуста</span>
+						</a>
+					</li>
+				</ul>
+				<ul class="page-header__menu-additions {{ page == 'index' ? 'page-header__menu-additions--index' : '' }} menu-additions">
+					<li class="menu-additions__item">
+						<a class="menu-additions__link" href="#!">Новые поступления</a>
+					</li>
+					<li class="menu-additions__item">
+						<a class="menu-additions__link" href="#!">Распродажа</a>
+					</li>
+				</ul>
+				<p class="page-header__description {{ page == 'index' ? 'page-header__description--index' : ''}}">Бесплатная доставка по России</p>
+
+				<ul class="page-header__menu-mobile menu-mobile menu-mobile--close">
+					<li class="menu-mobile__item">
+						<a class="menu-mobile__link" href="catalog.html">
+							<span>Каталог товаров</span>
+						</a>
+					</li>
+					<li class="menu-mobile__item">
+						<a class="menu-mobile__link" href="form.html">
+							<span>Вязание на заказ</span>
+						</a>
+					</li>
+					<li class="menu-mobile__item">
+						<a class="menu-mobile__link menu-mobile__link--search" href="#!">
+							<span>Поиск по сайту</span>
+						</a>
+					</li>
+					<li class="menu-mobile__item">
+						<a class="menu-mobile__link menu-mobile__link--cart" href="#!">
+							<span>Корзина: пока пуста</span>
+						</a>
+					</li>
+				</ul>
+			</header>
+
+			{% block main %}{% endblock %}
+
+			<footer class="page-footer">
+				<a class="page-footer__logo" href="#!">
+					<svg class="page-footer__logo-img" width="102" height="34" role="img" focusable="false">
+						<use xlink:href="img/logo-footer.svg#logo-footer"></use>
+					</svg>
+				</a>
+				<div class="page-footer__social">
+					<ul class="page-footer__list social-list">
+						{% for link in ['Vkontakte', 'YouTube', 'Telegram'] %}
+							{% set id = link|lower %}
+							<li class="social-list__item">
+								<a class="social-list__link social-list__link--{{ id }}" href="#!">
+									<span class="visually-hidden">{{ link }}</span>
+									<svg width="28" height="22" aria-hidden="true" focusable="false">
+										<use xlink:href="img/sprite.svg#{{ id }}"></use>
+									</svg>
+								</a>
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+				<div class="page-footer__copyright">
+					<p class="page-footer__copyright-content">
+						Разработано
+						<a class="page-footer__link-logo" href="#!">
+							<svg class="page-footer__copyright-logo" width="27" height="35" role="img" focusable="false">
+								<use xlink:href="img/icons/htmlacademy.svg#htmlacademy"></use>
+							</svg>
+						</a>
+					</p>
+				</div>
+			</footer>
+			<div class="modal">
+				<a href="#!" class="modal__overlay"></a>
+				<div class="modal__content">
+					<form class="modal__form" action="#" method="get">
+						<h2 class="modal__title">Добавить в корзину</h2>
+						<p class="modal__text">Выберите размер:</p>
+						<p class="modal__group">
+							<input class="modal__input" id="s" type="radio" name="size" value="s" checked>
+							<label class="modal__button" for="s">s</label>
+							<input class="modal__input" id="m" type="radio" name="size" value="m">
+							<label class="modal__button" for="m">m</label>
+							<input class="modal__input" id="l" type="radio" name="size" value="l">
+							<label class="modal__button" for="l">l</label>
+						</p>
+						<button class="modal__submit button" type="submit">Добавить</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		{% include 'base/scripts.twig' %}
+
+	</body>
+</html>

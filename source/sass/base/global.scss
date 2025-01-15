@@ -1,0 +1,19 @@
+body {
+  min-width: 320px;
+  margin: 0;
+  font-family: "Open Sans", "Arial", sans-serif;
+}
+
+.page {
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+}
+
+.page__footer {
+  margin-top: auto;
+}
+
+picture,
+source {
+  display: contents;
+}

@@ -1,0 +1,146 @@
+.page-footer {
+  background-color: #f1f1f1;
+
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 213px 1fr 1fr;
+    grid-template-rows: 140px;
+    padding-right: calc(50% - 384px);
+    padding-left: calc(50% - 384px);
+  }
+
+  @media (min-width: 1150px) {
+    justify-content: space-between;
+    max-width: 1150px;
+    height: 143px;
+    padding-right: calc(50% - 575px);
+    padding-left: calc(50% - 575px);
+  }
+}
+
+.page-footer__logo {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+    align-self: center;
+    margin-left: 50px;
+    color: #000000;
+  }
+
+  &:hover,
+  &:focus {
+    color: #46c1ae;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.page-footer__social {
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+  }
+
+  @media (min-width: 1150px) {
+    margin-right: 71px;
+    margin-left: auto;
+  }
+}
+
+.social-list {
+  display: flex;
+  justify-content: space-between;
+  width: 142px;
+  height: 27px;
+  margin: 0 auto;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 27px 59px 26px;
+  list-style: none;
+  border-bottom: 1px solid #e5e5e5;
+
+  @media (min-width: 768px) {
+    width: 154px;
+    height: 46px;
+    margin-left: 54px;
+    padding: 0;
+    border-bottom: none;
+  }
+}
+
+.social-list__link {
+  position: relative;
+  display: flex;
+  width: 28px;
+  height: 22px;
+  color: #231f20;
+
+  @media (min-width: 768px) {
+    width: 40px;
+    height: 40px;
+
+    & svg {
+      margin: auto;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    color: #46c1ae;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.page-footer__copyright {
+  @media (min-width: 768px) {
+    display: flex;
+    margin-left: 45px;
+  }
+
+  @media (min-width: 1150px) {
+    margin-left: 0;
+  }
+}
+
+.page-footer__copyright-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 19px 69px 23px;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 18px;
+  color: #000000;
+  text-decoration: none;
+
+  @media (min-width: 768px) {
+    width: 182px;
+    padding: 0;
+  }
+
+  @media (min-width: 1150px) {
+    margin-right: 52px;
+    margin-left: auto;
+  }
+}
+
+.page-footer__link-logo {
+  color: #63d1bb;
+
+  &:hover,
+  &:focus {
+    color: #46c1ae;
+  }
+
+  &:active {
+    color: #46c1ae;
+    opacity: 0.3;
+  }
+}
