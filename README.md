@@ -9,5 +9,3 @@
 * twig
 * sass
 * gulp
-
-[Опубликованная версия](https://soomlir.github.io/mishka/)
